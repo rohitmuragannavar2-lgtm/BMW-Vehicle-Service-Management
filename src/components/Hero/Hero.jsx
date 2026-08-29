@@ -87,29 +87,13 @@ function Hero() {
 
       </div>
 
-      {/* BOTTOM SCROLL INDICATOR */}
-      <button
-        className="hero-scroll"
-        onClick={scrollToPerformance}
-        aria-label="Scroll to next section"
-      >
+    
+    
 
-        <span className="hero-scroll-text">
-          SCROLL TO EXPLORE
-        </span>
 
-        <span className="hero-scroll-icon">
-          <ArrowDown size={15} />
-        </span>
-
-      </button>
 
       {/* SIDE NUMBER */}
-      <div className="hero-page-number">
-        <span>01</span>
-        <span className="hero-page-divider" />
-        <span>05</span>
-      </div>
+     
 
     </section>
   );

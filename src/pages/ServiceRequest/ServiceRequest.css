@@ -1349,3 +1349,131 @@
         height: 15px;
     }
 }
+
+
+/* =====================================================
+   SERVICE REQUEST — PREMIUM MOTION
+===================================================== */
+
+.service-intro {
+    animation: serviceIntroEntrance 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+
+@keyframes serviceIntroEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(28px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* VEHICLE CARD */
+
+.service-vehicle-card {
+    animation: serviceVehicleEntrance 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+@keyframes serviceVehicleEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(38px) scale(0.985);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.service-vehicle-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 22px 45px rgba(20, 30, 40, 0.085);
+}
+
+
+/* CAR IMAGE */
+
+.service-vehicle-image img {
+    transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-vehicle-card:hover .service-vehicle-image img {
+    transform: scale(1.08);
+}
+
+
+/* FORM CARDS */
+
+.form-section {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.4s ease;
+}
+
+.form-section:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 38px rgba(20, 30, 40, 0.065);
+}
+
+
+/* FORM ICON */
+
+.form-section-heading>svg {
+    transition: transform 0.35s ease, color 0.35s ease;
+}
+
+.form-section:hover .form-section-heading>svg {
+    transform: translateY(-2px) rotate(-4deg) scale(1.08);
+    color: #0879ca;
+}
+
+
+/* INPUTS */
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 0 0 3px rgba(8, 121, 202, 0.08), 0 9px 22px rgba(8, 121, 202, 0.07);
+}
+
+
+/* SUBMIT BUTTON */
+
+.submit-service-button {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
+}
+
+.submit-service-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(8, 121, 202, 0.23);
+}
+
+.submit-service-button:active {
+    transform: scale(0.97);
+}
+
+
+/* TOUCH DEVICES */
+
+@media (hover: none) {
+    .service-vehicle-card:active {
+        transform: scale(0.99);
+    }
+    .form-section:active {
+        transform: scale(0.995);
+    }
+    .submit-service-button:active {
+        transform: scale(0.96);
+    }
+}
