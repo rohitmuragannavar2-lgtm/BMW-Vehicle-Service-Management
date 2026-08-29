@@ -70,7 +70,16 @@ function Hero() {
               </span>
             </button>
 
-          
+            <button
+              className="secondary-button"
+              onClick={() => navigate("/models")}
+            >
+              <span>BUILD YOUR OWN</span>
+
+              <span className="secondary-arrow">
+                <ArrowUpRight size={16} />
+              </span>
+            </button>
 
           </div>
 
@@ -84,7 +93,11 @@ function Hero() {
 
 
       {/* SIDE NUMBER */}
-     
+      <div className="hero-page-number">
+        <span>01</span>
+        <span className="hero-page-divider" />
+        <span>05</span>
+      </div>
 
     </section>
   );
