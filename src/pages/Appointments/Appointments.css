@@ -58,13 +58,18 @@
    BACK BUTTON
 ========================================================= */
 
+
+/* =====================================================
+   BACK BUTTON — STANDARD
+===================================================== */
+
 .appointments-back-button {
-    height: 46px;
+    height: 40px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    padding: 0 18px;
+    gap: 8px;
+    padding: 0 15px;
     border: 1px solid #d9dee2;
     border-radius: 5px;
     background: #ffffff;
@@ -72,8 +77,9 @@
     cursor: pointer;
     font-family: inherit;
     font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 0.09em;
+    font-weight: 650;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
     transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -82,11 +88,50 @@
     color: #ffffff;
     border-color: #151a1e;
     transform: translateX(-4px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.11);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.10);
 }
 
 .appointments-back-button:active {
     transform: translateX(-2px) scale(0.98);
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+    .appointments-back-button {
+        height: 36px;
+        padding: 0 12px;
+        gap: 7px;
+        font-size: 8px;
+        letter-spacing: 0.07em;
+    }
+    .appointments-back-button svg {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+    .appointments-back-button {
+        height: 34px;
+        padding: 0 10px;
+        gap: 6px;
+        font-size: 7px;
+        letter-spacing: 0.06em;
+        border-radius: 4px;
+    }
+    .appointments-back-button svg {
+        width: 15px;
+        height: 15px;
+    }
 }
 
 
@@ -732,5 +777,57 @@
         gap: 5px;
         font-size: 7px;
         letter-spacing: 0.07em;
+    }
+}
+
+
+/* =====================================================
+   FINAL MOBILE HEADER FIX
+===================================================== */
+
+@media (max-width: 700px) {
+    .appointments-header {
+        min-height: 72px;
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 18px;
+    }
+    .appointments-back-button {
+        width: auto !important;
+        min-width: fit-content;
+        height: 34px;
+        padding: 0 10px;
+        gap: 6px;
+        font-size: 7px;
+        letter-spacing: 0.06em;
+        white-space: nowrap;
+    }
+    .appointments-back-button svg {
+        width: 15px;
+        height: 15px;
+    }
+    .appointments-title {
+        min-width: 0;
+        flex: 1;
+        min-height: 38px;
+        padding-left: 13px;
+        border-left: 1px solid #e4e7e9;
+        border-top: none;
+    }
+    .appointments-title span {
+        margin-bottom: 3px;
+        font-size: 7px;
+        letter-spacing: 0.16em;
+    }
+    .appointments-title h1 {
+        font-size: 19px;
+        line-height: 1.05;
+        white-space: nowrap;
+    }
+    .appointments-content {
+        width: 100%;
+        padding: 30px 18px 60px;
+        box-sizing: border-box;
     }
 }

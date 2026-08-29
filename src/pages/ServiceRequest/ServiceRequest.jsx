@@ -63,72 +63,30 @@ function ServiceRequest() {
       {/* =====================================================
           HEADER
       ===================================================== */}
+<header className="service-page-header">
 
-      <header
-  style={{
-    position: "fixed",
-    top: "0",
-    left: "0",
-    width: "100%",
-    height: "80px",
-    background: "#ffffff",
-    display: "flex",
-    alignItems: "center",
-    padding: "0 40px",
-    gap: "25px",
-    zIndex: "999999",
-    boxSizing: "border-box",
-    boxShadow: "0 2px 15px rgba(0,0,0,0.08)",
-  }}
->
   <button
     type="button"
+    className="service-back-button"
     onClick={() => navigate("/owner-dashboard")}
-    style={{
-      display: "flex",
-      alignItems: "center",
-      gap: "10px",
-      background: "#000000",
-      color: "#ffffff",
-      border: "none",
-      padding: "13px 22px",
-      borderRadius: "5px",
-      cursor: "pointer",
-      fontSize: "13px",
-      fontWeight: "700",
-      letterSpacing: "0.05em",
-      position: "relative",
-      zIndex: "1000000",
-    }}
   >
-    <ArrowLeft size={18} />
-    BACK TO DASHBOARD
+    <ArrowLeft size={17} />
+    <span>BACK TO DASHBOARD</span>
   </button>
 
-  <div>
-    <div
-      style={{
-        color: "#0879ca",
-        fontSize: "10px",
-        fontWeight: "700",
-        letterSpacing: "0.15em",
-      }}
-    >
+  <div className="service-header-title">
+
+    <div className="service-header-label">
       BMW OWNER PORTAL
     </div>
 
-    <h1
-      style={{
-        margin: "4px 0 0",
-        fontSize: "24px",
-        color: "#111111",
-      }}
-    >
+    <h1>
       Service Request
     </h1>
-  </div>
-</header>
 
+  </div>
+
+</header>
 
       {/* =====================================================
           MAIN CONTENT

@@ -945,3 +945,197 @@
         letter-spacing: 0.07em;
     }
 }
+
+
+/* =====================================================
+   FINAL DOCUMENTS RESPONSIVE HEADER
+===================================================== */
+
+@media (max-width: 700px) {
+    .documents-header {
+        min-height: 72px;
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 18px;
+    }
+    /* COMPACT BACK BUTTON */
+    .documents-back-button {
+        width: auto !important;
+        min-width: fit-content;
+        height: 34px;
+        padding: 0 10px;
+        gap: 6px;
+        border-radius: 4px;
+        font-size: 7px;
+        letter-spacing: 0.06em;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+    .documents-back-button svg {
+        width: 15px;
+        height: 15px;
+    }
+    /* HEADER TITLE */
+    .documents-title {
+        min-width: 0;
+        flex: 1;
+        min-height: 38px;
+        padding-left: 13px;
+        border-left: 1px solid #e4e7e9;
+        border-top: none;
+    }
+    .documents-title span {
+        margin-bottom: 3px;
+        font-size: 7px;
+        letter-spacing: 0.16em;
+    }
+    .documents-title h1 {
+        font-size: 19px;
+        line-height: 1.05;
+        white-space: nowrap;
+    }
+    /* CONTENT */
+    .documents-content {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 30px 18px 60px;
+    }
+    /* INTRO */
+    .documents-intro h2 {
+        font-size: 30px;
+        line-height: 1.12;
+    }
+    .documents-intro span {
+        font-size: 13px;
+        line-height: 1.65;
+    }
+    /* VEHICLE */
+    .documents-vehicle-card {
+        padding: 22px;
+    }
+    /* DOCUMENT GRID */
+    .documents-grid {
+        grid-template-columns: 1fr;
+    }
+    .document-card {
+        padding: 22px;
+    }
+    .document-actions {
+        flex-direction: row;
+    }
+    .document-view-button,
+    .document-download-button {
+        flex: 1;
+    }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 450px) {
+    .documents-header {
+        padding: 10px 15px;
+        gap: 10px;
+    }
+    /* =====================================================
+   BACK BUTTON — STANDARD
+===================================================== */
+    .documents-back-button {
+        height: 40px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 0 15px;
+        border: 1px solid #d9dee2;
+        border-radius: 5px;
+        background: #ffffff;
+        color: #292f34;
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 9px;
+        font-weight: 650;
+        letter-spacing: 0.08em;
+        white-space: nowrap;
+        transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .documents-back-button:hover {
+        background: #151a1e;
+        color: #ffffff;
+        border-color: #151a1e;
+        transform: translateX(-4px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.10);
+    }
+    .documents-back-button:active {
+        transform: translateX(-2px) scale(0.98);
+    }
+    /* =====================================================
+   TABLET
+===================================================== */
+    @media (max-width: 900px) {
+        .documents-back-button {
+            height: 36px;
+            padding: 0 12px;
+            gap: 7px;
+            font-size: 8px;
+            letter-spacing: 0.07em;
+        }
+        .documents-back-button svg {
+            width: 16px;
+            height: 16px;
+        }
+    }
+    /* =====================================================
+   MOBILE
+===================================================== */
+    @media (max-width: 600px) {
+        .documents-back-button {
+            height: 34px;
+            padding: 0 10px;
+            gap: 6px;
+            font-size: 7px;
+            letter-spacing: 0.06em;
+            border-radius: 4px;
+        }
+        .documents-back-button svg {
+            width: 15px;
+            height: 15px;
+        }
+    }
+    .documents-title {
+        padding-left: 11px;
+    }
+    .documents-title span {
+        font-size: 6px;
+        letter-spacing: 0.13em;
+    }
+    .documents-title h1 {
+        font-size: 17px;
+    }
+    .documents-content {
+        padding: 25px 15px 50px;
+    }
+    .documents-intro h2 {
+        font-size: 27px;
+    }
+    .documents-intro span {
+        font-size: 12px;
+    }
+    .documents-vehicle-card {
+        padding: 20px;
+    }
+    .document-card {
+        padding: 20px;
+    }
+    .document-actions {
+        gap: 8px;
+    }
+    .document-view-button,
+    .document-download-button {
+        height: 42px;
+        font-size: 8px;
+    }
+}
