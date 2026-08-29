@@ -40,10 +40,7 @@ function Performance() {
           disappears beneath you.
         </p>
 
-        <button className="performance-button">
-          EXPERIENCE PERFORMANCE
-          <span>→</span>
-        </button>
+       
 
       </div>
 

@@ -70,16 +70,6 @@ function Hero() {
               </span>
             </button>
 
-            <button
-              className="secondary-button"
-              onClick={() => navigate("/models")}
-            >
-              <span>BUILD YOUR OWN</span>
-
-              <span className="secondary-arrow">
-                <ArrowUpRight size={16} />
-              </span>
-            </button>
 
           </div>
 
