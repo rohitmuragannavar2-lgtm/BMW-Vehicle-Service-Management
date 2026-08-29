@@ -1,0 +1,1030 @@
+/* =========================================================
+   BMW SERVICE REQUEST
+   PREMIUM WHITE UI
+========================================================= */
+
+.service-request-page {
+    min-height: 100vh;
+    width: 100%;
+    background: #ffffff;
+    color: #171a1d;
+    font-family: "Inter", "Public Sans", "Plus Jakarta Sans", "Helvetica Neue", Arial, sans-serif;
+    animation: pageReveal 0.7s ease both;
+}
+
+
+/* =========================================================
+   PAGE REVEAL
+========================================================= */
+
+@keyframes pageReveal {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.service-request-header {
+    width: 100%;
+    min-height: 96px;
+    display: flex;
+    align-items: center;
+    gap: 34px;
+    padding: 18px 58px;
+    box-sizing: border-box;
+    background: #ffffff;
+    border-bottom: 1px solid #e7eaed;
+    position: relative;
+    z-index: 10;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.service-back-button {
+    height: 46px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 19px;
+    border: 1px solid #dfe3e6;
+    border-radius: 5px;
+    background: #ffffff;
+    color: #252a2f;
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 650;
+    letter-spacing: 0.11em;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: color 0.3s ease, background 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-back-button:hover {
+    background: #111518;
+    border-color: #111518;
+    color: #ffffff;
+    transform: translateX(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.10);
+}
+
+.service-back-button:active {
+    transform: translateX(-2px) scale(0.98);
+}
+
+
+/* =========================================================
+   HEADER TITLE
+========================================================= */
+
+.service-header-title {
+    min-height: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 30px;
+    border-left: 1px solid #e3e7ea;
+}
+
+.service-header-title span {
+    display: block;
+    margin-bottom: 6px;
+    color: #0879ca;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.20em;
+    text-transform: uppercase;
+}
+
+.service-header-title h1 {
+    margin: 0;
+    color: #20252a;
+    font-size: 27px;
+    line-height: 1.15;
+    font-weight: 450;
+    letter-spacing: -0.035em;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.service-request-content {
+    width: 100%;
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 52px 40px 100px;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.service-intro {
+    margin-bottom: 30px;
+    animation: contentReveal 0.8s 0.1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes contentReveal {
+    from {
+        opacity: 0;
+        transform: translateY(22px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.service-intro p {
+    margin: 0 0 11px;
+    color: #0879ca;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+}
+
+.service-intro h2 {
+    margin: 0 0 10px;
+    color: #181d21;
+    font-size: clamp(34px, 4vw, 43px);
+    line-height: 1.08;
+    font-weight: 400;
+    letter-spacing: -0.045em;
+}
+
+.service-intro span {
+    display: block;
+    max-width: 600px;
+    color: #747c83;
+    font-size: 14px;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   VEHICLE CARD
+========================================================= */
+
+.service-vehicle-card {
+    min-height: 150px;
+    display: flex;
+    align-items: stretch;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 1px solid #e1e5e8;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 8px 30px rgba(20, 30, 40, 0.045);
+    animation: contentReveal 0.85s 0.18s cubic-bezier(0.16, 1, 0.3, 1) both;
+    transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
+}
+
+.service-vehicle-card:hover {
+    border-color: #d5dce1;
+    box-shadow: 0 15px 38px rgba(20, 30, 40, 0.075);
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   VEHICLE IMAGE
+========================================================= */
+
+.service-vehicle-image {
+    width: 245px;
+    min-width: 245px;
+    height: 150px;
+    overflow: hidden;
+    background: #f4f6f7;
+}
+
+.service-vehicle-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+}
+
+.service-vehicle-card:hover .service-vehicle-image img {
+    transform: scale(1.055);
+}
+
+
+/* =========================================================
+   VEHICLE INFORMATION
+========================================================= */
+
+.service-vehicle-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 7px;
+    padding: 26px 30px;
+    box-sizing: border-box;
+}
+
+.service-vehicle-info p {
+    margin: 0;
+    color: #0879ca;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.19em;
+    text-transform: uppercase;
+}
+
+.service-vehicle-info h3 {
+    margin: 0;
+    color: #20252a;
+    font-size: 23px;
+    line-height: 1.2;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+}
+
+.service-vehicle-info span {
+    color: #7a8288;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+
+/* =========================================================
+   OWNER INFORMATION
+========================================================= */
+
+.service-vehicle-owner {
+    min-width: 245px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 7px;
+    margin-left: auto;
+    padding: 25px 30px;
+    box-sizing: border-box;
+    border-left: 1px solid #e8ebed;
+}
+
+.service-vehicle-owner small {
+    color: #92999f;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.service-vehicle-owner strong {
+    color: #2e3439;
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.service-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+
+/* =========================================================
+   FORM SECTION
+========================================================= */
+
+.form-section {
+    padding: 32px;
+    border: 1px solid #e1e5e8;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 7px 25px rgba(20, 30, 40, 0.035);
+    animation: contentReveal 0.85s 0.28s cubic-bezier(0.16, 1, 0.3, 1) both;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-section:hover {
+    border-color: #d9dee2;
+    box-shadow: 0 12px 30px rgba(20, 30, 40, 0.055);
+}
+
+
+/* =========================================================
+   FORM SECTION HEADING
+========================================================= */
+
+.form-section-heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 28px;
+    color: #0879ca;
+}
+
+.form-section-heading>svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+    opacity: 0.9;
+}
+
+.form-section-heading>div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-section-heading p {
+    margin: 0;
+    color: #0879ca;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.19em;
+    text-transform: uppercase;
+}
+
+.form-section-heading h3 {
+    margin: 0;
+    color: #24292e;
+    font-size: 22px;
+    line-height: 1.25;
+    font-weight: 450;
+    letter-spacing: -0.03em;
+}
+
+
+/* =========================================================
+   FORM FIELD
+========================================================= */
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.form-field label {
+    color: #626b72;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   INPUT / SELECT / TEXTAREA
+========================================================= */
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #dfe4e7;
+    border-radius: 5px;
+    background: #ffffff;
+    color: #252a2f;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 400;
+    outline: none;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease, background 0.25s ease;
+}
+
+.form-field input,
+.form-field select {
+    height: 53px;
+    padding: 0 16px;
+}
+
+.form-field textarea {
+    min-height: 145px;
+    padding: 16px;
+    line-height: 1.65;
+    resize: vertical;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+    color: #a2a8ad;
+    transition: color 0.25s ease;
+}
+
+.form-field input:hover,
+.form-field select:hover,
+.form-field textarea:hover {
+    border-color: #cbd2d7;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+    border-color: #0879ca;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(8, 121, 202, 0.08), 0 5px 18px rgba(8, 121, 202, 0.045);
+}
+
+.form-field input:focus::placeholder,
+.form-field textarea:focus::placeholder {
+    color: #c1c6ca;
+}
+
+
+/* =========================================================
+   SELECT
+========================================================= */
+
+.form-field select {
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   TWO COLUMN
+========================================================= */
+
+.form-two-column {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+
+/* =========================================================
+   INPUT WITH ICON
+========================================================= */
+
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon>svg {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #7e878e;
+    pointer-events: none;
+    z-index: 2;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.input-with-icon input,
+.input-with-icon select {
+    padding-left: 48px;
+}
+
+.input-with-icon:focus-within>svg {
+    color: #0879ca;
+    transform: translateY(-50%) scale(1.05);
+}
+
+
+/* =========================================================
+   FIELD HELP
+========================================================= */
+
+.field-help {
+    color: #969da3;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   SUBMIT AREA
+========================================================= */
+
+.service-submit-area {
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    padding: 24px 30px;
+    box-sizing: border-box;
+    border: 1px solid #dfe4e7;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 7px 25px rgba(20, 30, 40, 0.035);
+    animation: contentReveal 0.9s 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+
+/* =========================================================
+   SUBMIT INFO
+========================================================= */
+
+.submit-info {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    color: #248552;
+}
+
+.submit-info>svg {
+    flex-shrink: 0;
+}
+
+.submit-info>div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.submit-info strong {
+    color: #30363b;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.submit-info span {
+    color: #8d959b;
+    font-size: 11px;
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   SUBMIT BUTTON
+========================================================= */
+
+.submit-service-button {
+    height: 51px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+    padding: 0 23px;
+    border: none;
+    border-radius: 4px;
+    background: #0879ca;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    white-space: nowrap;
+    box-shadow: 0 7px 18px rgba(8, 121, 202, 0.16);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.submit-service-button:hover {
+    background: #006fbe;
+    transform: translateY(-3px);
+    box-shadow: 0 13px 28px rgba(8, 121, 202, 0.23);
+}
+
+.submit-service-button:active {
+    transform: translateY(-1px) scale(0.985);
+    box-shadow: 0 6px 15px rgba(8, 121, 202, 0.16);
+}
+
+
+/* =========================================================
+   SUBMIT ARROW
+========================================================= */
+
+.submit-arrow {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+}
+
+.submit-service-button:hover .submit-arrow {
+    transform: rotate(180deg) translateX(-4px);
+}
+
+
+/* =========================================================
+   EXTRA BACK BUTTON SUPPORT
+========================================================= */
+
+.back-dashboard-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px;
+    border: 1px solid #dfe3e6;
+    border-radius: 5px;
+    background: #ffffff;
+    color: #30363b;
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 650;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.back-dashboard-button:hover {
+    background: #111518;
+    border-color: #111518;
+    color: #ffffff;
+    transform: translateX(-4px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.09);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+    .service-request-header {
+        padding: 18px 35px;
+    }
+    .service-request-content {
+        padding: 42px 30px 80px;
+    }
+    .service-vehicle-owner {
+        min-width: 205px;
+    }
+    .service-vehicle-image {
+        width: 215px;
+        min-width: 215px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+    .service-request-header {
+        min-height: auto;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+        padding: 22px 20px;
+    }
+    .service-header-title {
+        width: 100%;
+        min-height: auto;
+        padding: 18px 0 0;
+        border-left: none;
+        border-top: 1px solid #e4e7e9;
+    }
+    .service-header-title h1 {
+        font-size: 25px;
+    }
+    .service-back-button {
+        height: 44px;
+    }
+    .service-request-content {
+        padding: 30px 18px 60px;
+    }
+    .service-intro {
+        margin-bottom: 24px;
+    }
+    .service-intro h2 {
+        font-size: 31px;
+    }
+    .service-intro span {
+        font-size: 13px;
+    }
+    /* VEHICLE */
+    .service-vehicle-card {
+        display: block;
+    }
+    .service-vehicle-image {
+        width: 100%;
+        min-width: 100%;
+        height: 195px;
+    }
+    .service-vehicle-info {
+        padding: 24px;
+    }
+    .service-vehicle-info h3 {
+        font-size: 22px;
+    }
+    .service-vehicle-owner {
+        min-width: 0;
+        margin-left: 0;
+        padding: 20px 24px;
+        border-left: none;
+        border-top: 1px solid #e7eaec;
+    }
+    /* FORM */
+    .form-section {
+        padding: 24px 20px;
+    }
+    .form-section-heading {
+        margin-bottom: 23px;
+    }
+    .form-section-heading h3 {
+        font-size: 20px;
+    }
+    .form-two-column {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+    /* SUBMIT */
+    .service-submit-area {
+        align-items: stretch;
+        flex-direction: column;
+        padding: 22px 20px;
+    }
+    .submit-service-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 450px) {
+    .service-request-content {
+        padding: 25px 15px 50px;
+    }
+    .service-intro h2 {
+        font-size: 28px;
+    }
+    .service-vehicle-image {
+        height: 175px;
+    }
+    .service-vehicle-info {
+        padding: 21px;
+    }
+    .service-vehicle-owner {
+        padding: 18px 21px;
+    }
+    .form-section {
+        padding: 22px 17px;
+    }
+    .form-section-heading {
+        gap: 11px;
+    }
+    .form-section-heading h3 {
+        font-size: 19px;
+    }
+    .form-field input,
+    .form-field select {
+        height: 50px;
+    }
+    .form-field textarea {
+        min-height: 125px;
+    }
+    .submit-info strong {
+        font-size: 13px;
+    }
+    .submit-info span {
+        font-size: 10px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .service-request-page,
+    .service-intro,
+    .service-vehicle-card,
+    .form-section,
+    .service-submit-area {
+        animation: none;
+    }
+    .service-vehicle-image img,
+    .service-back-button,
+    .submit-service-button,
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+        transition: none;
+    }
+}
+
+
+/* =========================================================
+   SERVICE REQUEST — FINAL UX POLISH
+========================================================= */
+
+
+/* Better overall content rhythm */
+
+.service-request-content {
+    padding-top: 58px;
+}
+
+
+/* Stronger intro hierarchy */
+
+.service-intro h2 {
+    max-width: 720px;
+}
+
+.service-intro span {
+    max-width: 650px;
+}
+
+
+/* Vehicle card accent */
+
+.service-vehicle-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: #0879ca;
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: center;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    z-index: 2;
+}
+
+.service-vehicle-card:hover::before {
+    opacity: 0.8;
+    transform: scaleY(1);
+}
+
+
+/* Vehicle image feels more premium */
+
+.service-vehicle-image {
+    position: relative;
+}
+
+.service-vehicle-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient( 90deg, transparent 60%, rgba(255, 255, 255, 0.08));
+    pointer-events: none;
+}
+
+
+/* Form sections get a cleaner hierarchy */
+
+.form-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.form-section::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient( 90deg, #0879ca, rgba(8, 121, 202, 0.15), transparent);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.form-section:focus-within::before {
+    opacity: 1;
+}
+
+
+/* Labels become easier to scan */
+
+.form-field label {
+    transition: color 0.25s ease;
+}
+
+.form-field:focus-within label {
+    color: #0879ca;
+}
+
+
+/* Input lift is extremely subtle */
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+    transform: translateY(-1px);
+}
+
+
+/* Textarea resize handle */
+
+.form-field textarea {
+    scrollbar-width: thin;
+}
+
+
+/* Submit area */
+
+.service-submit-area {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient( 135deg, #ffffff 0%, #ffffff 70%, #f7fbfe 100%);
+}
+
+.service-submit-area::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: #0879ca;
+    opacity: 0.75;
+}
+
+
+/* Submit info icon gets subtle emphasis */
+
+.submit-info>svg {
+    filter: drop-shadow( 0 4px 7px rgba(36, 133, 82, 0.12));
+}
+
+
+/* Submit button becomes the clear primary CTA */
+
+.submit-service-button {
+    min-width: 205px;
+    position: relative;
+    overflow: hidden;
+}
+
+.submit-service-button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient( 110deg, transparent 20%, rgba(255, 255, 255, 0.18) 45%, transparent 70%);
+    transform: translateX(-120%);
+    transition: transform 0.65s ease;
+    pointer-events: none;
+}
+
+.submit-service-button:hover::before {
+    transform: translateX(120%);
+}
+
+
+/* Keyboard accessibility */
+
+.service-back-button:focus-visible,
+.submit-service-button:focus-visible,
+.form-field input:focus-visible,
+.form-field select:focus-visible,
+.form-field textarea:focus-visible {
+    outline: 2px solid #0879ca;
+    outline-offset: 3px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+    .service-request-content {
+        padding-top: 34px;
+    }
+    .service-submit-area::before {
+        width: 100%;
+        height: 2px;
+        bottom: auto;
+    }
+    .submit-service-button {
+        min-width: 0;
+    }
+}
+
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+    .service-vehicle-card::before,
+    .form-section::before,
+    .submit-service-button::before {
+        transition: none !important;
+    }
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
+        transform: none;
+    }
+}

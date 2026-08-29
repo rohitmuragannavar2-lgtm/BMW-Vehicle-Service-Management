@@ -1,0 +1,1170 @@
+/* =========================================================
+   BMW ADMIN REQUEST DETAILS
+   PREMIUM WHITE UI
+========================================================= */
+
+.admin-request-page {
+    min-height: 100vh;
+    width: 100%;
+    background: #ffffff;
+    color: #171b1f;
+    font-family: "Inter", "Public Sans", "Plus Jakarta Sans", "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    animation: adminPageReveal 0.65s ease both;
+}
+
+@keyframes adminPageReveal {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes adminContentReveal {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.admin-request-header {
+    min-height: 92px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 0 55px;
+    box-sizing: border-box;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(255, 255, 255, 0.97);
+    border-bottom: 1px solid #e6e9eb;
+    box-shadow: 0 5px 22px rgba(0, 0, 0, 0.035);
+    backdrop-filter: blur(12px);
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.admin-request-back {
+    height: 45px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 0 18px;
+    background: #ffffff;
+    color: #343a3f;
+    border: 1px solid #dce1e5;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.admin-request-back:hover {
+    background: #111518;
+    color: #ffffff;
+    border-color: #111518;
+    transform: translateX(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.11);
+}
+
+.admin-request-back:active {
+    transform: translateX(-2px) scale(0.98);
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.admin-request-title {
+    padding-left: 30px;
+    border-left: 1px solid #e3e7e9;
+}
+
+.admin-request-title span {
+    display: block;
+    margin-bottom: 6px;
+    color: #0879ca;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.21em;
+    text-transform: uppercase;
+}
+
+.admin-request-title h1 {
+    margin: 0;
+    color: #20252a;
+    font-size: 27px;
+    line-height: 1.1;
+    font-weight: 500;
+    letter-spacing: -0.045em;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.admin-request-content {
+    width: min(1100px, calc(100% - 80px));
+    margin: 0 auto;
+    padding: 52px 0 90px;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.admin-request-intro {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 30px;
+    animation: adminContentReveal 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both;
+}
+
+.admin-request-intro p,
+.admin-information-heading p,
+.admin-description-heading p,
+.admin-status-heading p {
+    margin: 0 0 8px;
+    color: #0879ca;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.20em;
+    text-transform: uppercase;
+}
+
+.admin-request-intro h2 {
+    margin: 0 0 9px;
+    color: #181d21;
+    font-size: 39px;
+    line-height: 1.05;
+    font-weight: 450;
+    letter-spacing: -0.055em;
+}
+
+.admin-request-intro span {
+    color: #7d858c;
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   CURRENT STATUS
+========================================================= */
+
+.admin-current-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.035);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.admin-current-status:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 9px 20px rgba(0, 0, 0, 0.07);
+}
+
+.admin-current-status.pending {
+    background: #fff5e7;
+    color: #b87300;
+}
+
+.admin-current-status.approved {
+    background: #edf8f2;
+    color: #248552;
+}
+
+.admin-current-status.in-service {
+    background: #edf6fd;
+    color: #0879ca;
+}
+
+.admin-current-status.completed {
+    background: #edf8f2;
+    color: #248552;
+}
+
+.admin-current-status.rejected {
+    background: #fff0f0;
+    color: #c43d3d;
+}
+
+
+/* =========================================================
+   OWNER / VEHICLE CARDS
+========================================================= */
+
+.admin-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.admin-detail-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    padding: 25px;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid #dfe4e7;
+    border-radius: 8px;
+    box-shadow: 0 7px 25px rgba(20, 30, 40, 0.035);
+    animation: adminContentReveal 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+    transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.admin-detail-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 18px;
+    bottom: 18px;
+    width: 2px;
+    background: #0879ca;
+    transform: scaleY(0);
+    transform-origin: center;
+    transition: transform 0.35s ease;
+}
+
+.admin-detail-card:hover {
+    transform: translateY(-4px);
+    border-color: #d3dbe0;
+    box-shadow: 0 15px 35px rgba(20, 30, 40, 0.07);
+}
+
+.admin-detail-card:hover::before {
+    transform: scaleY(1);
+}
+
+
+/* =========================================================
+   DETAIL ICON
+========================================================= */
+
+.admin-detail-icon {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 9px;
+    background: #edf7fd;
+    color: #0879ca;
+    transition: transform 0.35s ease, background 0.35s ease;
+}
+
+.admin-detail-card:hover .admin-detail-icon {
+    transform: scale(1.07) rotate(-3deg);
+    background: #e5f3fc;
+}
+
+
+/* =========================================================
+   DETAIL TEXT
+========================================================= */
+
+.admin-detail-card small,
+.admin-information-item small,
+.admin-notes small {
+    display: block;
+    margin-bottom: 6px;
+    color: #92999f;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+}
+
+.admin-detail-card h3 {
+    margin: 0 0 5px;
+    color: #292f34;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.admin-detail-card span {
+    color: #858d93;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   COMMON CONTENT CARDS
+========================================================= */
+
+.admin-information-card,
+.admin-description-card,
+.admin-status-card {
+    margin-top: 18px;
+    padding: 30px;
+    background: #ffffff;
+    border: 1px solid #dfe4e7;
+    border-radius: 8px;
+    box-shadow: 0 7px 25px rgba(20, 30, 40, 0.032);
+    animation: adminContentReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.admin-information-card:hover,
+.admin-description-card:hover,
+.admin-status-card:hover {
+    border-color: #d7dde1;
+    box-shadow: 0 12px 30px rgba(20, 30, 40, 0.055);
+}
+
+
+/* =========================================================
+   SECTION HEADINGS
+========================================================= */
+
+.admin-information-heading h2,
+.admin-description-heading h2,
+.admin-status-heading h2 {
+    margin: 0;
+    color: #242a2f;
+    font-size: 26px;
+    line-height: 1.15;
+    font-weight: 450;
+    letter-spacing: -0.04em;
+}
+
+
+/* =========================================================
+   INFORMATION GRID
+========================================================= */
+
+.admin-information-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin-top: 25px;
+    overflow: hidden;
+    border-top: 1px solid #edf0f2;
+    border-bottom: 1px solid #edf0f2;
+}
+
+.admin-information-item {
+    min-height: 105px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 20px;
+    color: #0879ca;
+    border-right: 1px solid #edf0f2;
+    transition: background 0.3s ease;
+}
+
+.admin-information-item:hover {
+    background: #fbfdff;
+}
+
+.admin-information-item:last-child {
+    border-right: none;
+}
+
+.admin-information-item>svg {
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.admin-information-item:hover>svg {
+    transform: scale(1.08);
+}
+
+.admin-information-item div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.admin-information-item strong {
+    color: #30363b;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.admin-description-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #0879ca;
+}
+
+.admin-description {
+    margin-top: 25px;
+    padding: 22px 24px;
+    background: #fafbfc;
+    border: 1px solid #edf0f2;
+    border-left: 3px solid #0879ca;
+    border-radius: 5px;
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.admin-description:hover {
+    background: #f8fbfd;
+    border-color: #e2e8ec;
+}
+
+.admin-description p {
+    margin: 0;
+    color: #555e65;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.admin-notes {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #edf0f2;
+}
+
+.admin-notes p {
+    margin: 8px 0 0;
+    color: #666f76;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   STATUS SECTION
+========================================================= */
+
+.admin-status-heading span {
+    display: block;
+    margin-top: 7px;
+    color: #858d93;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.admin-status-actions {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 25px;
+}
+
+
+/* =========================================================
+   STATUS BUTTON
+========================================================= */
+
+.status-button {
+    position: relative;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.status-button:hover {
+    transform: translateY(-3px);
+}
+
+.status-button:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+
+/* =========================================================
+   STATUS BUTTONS
+========================================================= */
+
+.status-button.approve {
+    background: #edf8f2;
+    color: #248552;
+    border: 1px solid #cce9d9;
+}
+
+.status-button.approve:hover {
+    background: #248552;
+    color: #ffffff;
+    border-color: #248552;
+    box-shadow: 0 10px 22px rgba(36, 133, 82, 0.17);
+}
+
+.status-button.service {
+    background: #edf6fd;
+    color: #0879ca;
+    border: 1px solid #cde5f5;
+}
+
+.status-button.service:hover {
+    background: #0879ca;
+    color: #ffffff;
+    border-color: #0879ca;
+    box-shadow: 0 10px 22px rgba(8, 121, 202, 0.18);
+}
+
+.status-button.complete {
+    background: #171b1f;
+    color: #ffffff;
+    border: 1px solid #171b1f;
+}
+
+.status-button.complete:hover {
+    background: #0879ca;
+    border-color: #0879ca;
+    box-shadow: 0 10px 22px rgba(8, 121, 202, 0.18);
+}
+
+.status-button.reject {
+    background: #fff1f1;
+    color: #c43d3d;
+    border: 1px solid #f0cccc;
+}
+
+.status-button.reject:hover {
+    background: #c43d3d;
+    color: #ffffff;
+    border-color: #c43d3d;
+    box-shadow: 0 10px 22px rgba(196, 61, 61, 0.16);
+}
+
+
+/* =========================================================
+   BOTTOM BACK
+========================================================= */
+
+.admin-bottom-back {
+    margin-top: 25px;
+    height: 45px;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 0 18px;
+    background: #ffffff;
+    color: #30363b;
+    border: 1px solid #d9dee2;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.admin-bottom-back:hover {
+    background: #111518;
+    color: #ffffff;
+    border-color: #111518;
+    transform: translateX(-3px);
+    box-shadow: 0 9px 22px rgba(0, 0, 0, 0.10);
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.admin-request-empty {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+    animation: adminContentReveal 0.7s ease both;
+}
+
+.admin-request-empty svg {
+    color: #0879ca;
+}
+
+.admin-request-empty h1 {
+    margin: 0;
+    color: #252b30;
+    font-size: 32px;
+    font-weight: 450;
+    letter-spacing: -0.04em;
+}
+
+.admin-request-empty p {
+    margin: 0;
+    color: #858d93;
+    font-size: 13px;
+}
+
+.admin-request-empty button {
+    margin-top: 10px;
+    height: 44px;
+    padding: 0 20px;
+    background: #111518;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.admin-request-empty button:hover {
+    background: #0879ca;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(8, 121, 202, 0.18);
+}
+
+
+/* =========================================================
+   FOCUS ACCESSIBILITY
+========================================================= */
+
+.admin-request-back:focus-visible,
+.status-button:focus-visible,
+.admin-bottom-back:focus-visible,
+.admin-request-empty button:focus-visible {
+    outline: 2px solid #0879ca;
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+    .admin-request-header {
+        padding: 0 35px;
+    }
+    .admin-request-content {
+        width: calc(100% - 60px);
+    }
+    .admin-information-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .admin-information-item:nth-child(2) {
+        border-right: none;
+    }
+    .admin-information-item:nth-child(-n + 2) {
+        border-bottom: 1px solid #edf0f2;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+    .admin-request-header {
+        min-height: auto;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+        padding: 22px 20px;
+    }
+    .admin-request-back {
+        width: 100%;
+    }
+    .admin-request-title {
+        width: 100%;
+        padding: 18px 0 0;
+        border-left: none;
+        border-top: 1px solid #e3e7e9;
+    }
+    .admin-request-content {
+        width: calc(100% - 30px);
+        padding: 32px 0 60px;
+    }
+    .admin-request-intro {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .admin-request-intro h2 {
+        font-size: 31px;
+    }
+    .admin-detail-grid {
+        grid-template-columns: 1fr;
+    }
+    .admin-information-card,
+    .admin-description-card,
+    .admin-status-card {
+        padding: 23px 19px;
+    }
+    .admin-information-grid {
+        grid-template-columns: 1fr;
+    }
+    .admin-information-item {
+        border-right: none;
+        border-bottom: 1px solid #edf0f2;
+    }
+    .admin-information-item:nth-child(2) {
+        border-bottom: 1px solid #edf0f2;
+    }
+    .admin-information-item:last-child {
+        border-bottom: none;
+    }
+    .admin-status-actions {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+    .admin-request-content {
+        width: calc(100% - 24px);
+    }
+    .admin-request-intro h2 {
+        font-size: 28px;
+    }
+    .admin-current-status {
+        font-size: 8px;
+        padding: 9px 13px;
+    }
+    .admin-detail-card {
+        padding: 20px;
+    }
+    .admin-detail-icon {
+        width: 46px;
+        height: 46px;
+    }
+    .admin-detail-card h3 {
+        font-size: 16px;
+    }
+    .admin-information-heading h2,
+    .admin-description-heading h2,
+    .admin-status-heading h2 {
+        font-size: 22px;
+    }
+    .admin-status-actions {
+        grid-template-columns: 1fr;
+    }
+    .status-button {
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .admin-request-page,
+    .admin-request-intro,
+    .admin-detail-card,
+    .admin-information-card,
+    .admin-description-card,
+    .admin-status-card,
+    .admin-request-empty {
+        animation: none !important;
+    }
+    * {
+        scroll-behavior: auto !important;
+        transition: none !important;
+    }
+}
+
+
+/* =========================================================
+   FINAL BMW ADMIN REQUEST DETAILS POLISH
+========================================================= */
+
+
+/* ---------------------------------------------------------
+   PAGE DEPTH
+--------------------------------------------------------- */
+
+.admin-request-page {
+    background: linear-gradient( 180deg, #ffffff 0%, #ffffff 78%, #fafbfc 100%);
+}
+
+
+/* ---------------------------------------------------------
+   HEADER
+--------------------------------------------------------- */
+
+.admin-request-header {
+    box-shadow: 0 8px 30px rgba(20, 30, 38, 0.045);
+}
+
+.admin-request-title {
+    position: relative;
+}
+
+.admin-request-title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 2px;
+    height: 34px;
+    background: #0879ca;
+    opacity: 0.65;
+}
+
+
+/* ---------------------------------------------------------
+   BACK BUTTON
+--------------------------------------------------------- */
+
+.admin-request-back {
+    position: relative;
+    overflow: hidden;
+}
+
+.admin-request-back::after {
+    content: "";
+    position: absolute;
+    left: -100%;
+    top: 0;
+    width: 65%;
+    height: 100%;
+    background: linear-gradient( 90deg, transparent, rgba(255, 255, 255, 0.17), transparent);
+    transform: skewX(-20deg);
+    transition: left 0.5s ease;
+    pointer-events: none;
+}
+
+.admin-request-back:hover::after {
+    left: 140%;
+}
+
+
+/* ---------------------------------------------------------
+   INTRO
+--------------------------------------------------------- */
+
+.admin-request-intro h2 {
+    background: linear-gradient( 90deg, #181d21, #424a50);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* ---------------------------------------------------------
+   CURRENT STATUS
+--------------------------------------------------------- */
+
+.admin-current-status {
+    border: 1px solid transparent;
+    box-shadow: 0 6px 18px rgba(20, 30, 38, 0.045);
+}
+
+.admin-current-status.pending {
+    border-color: #f0dfbd;
+}
+
+.admin-current-status.approved,
+.admin-current-status.completed {
+    border-color: #d2eadf;
+}
+
+.admin-current-status.in-service {
+    border-color: #d3e7f4;
+}
+
+.admin-current-status.rejected {
+    border-color: #efd5d5;
+}
+
+
+/* ---------------------------------------------------------
+   OWNER / VEHICLE CARDS
+--------------------------------------------------------- */
+
+.admin-detail-card {
+    isolation: isolate;
+}
+
+.admin-detail-card::after {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 140px;
+    right: -90px;
+    top: -85px;
+    background: radial-gradient( circle, rgba(8, 121, 202, 0.045), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.admin-detail-card:hover::after {
+    opacity: 1;
+}
+
+.admin-detail-card:hover {
+    box-shadow: 0 18px 38px rgba(20, 30, 40, 0.075);
+}
+
+
+/* ---------------------------------------------------------
+   DETAIL ICON
+--------------------------------------------------------- */
+
+.admin-detail-icon {
+    box-shadow: 0 6px 17px rgba(8, 121, 202, 0.055);
+}
+
+
+/* ---------------------------------------------------------
+   CONTENT CARDS
+--------------------------------------------------------- */
+
+.admin-information-card,
+.admin-description-card,
+.admin-status-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.admin-information-card::before,
+.admin-description-card::before,
+.admin-status-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: #0879ca;
+    opacity: 0.55;
+    transform: scaleY(0);
+    transform-origin: center;
+    transition: transform 0.4s ease;
+}
+
+.admin-information-card:hover::before,
+.admin-description-card:hover::before,
+.admin-status-card:hover::before {
+    transform: scaleY(1);
+}
+
+
+/* ---------------------------------------------------------
+   SECTION HEADINGS
+--------------------------------------------------------- */
+
+.admin-information-heading,
+.admin-description-heading,
+.admin-status-heading {
+    position: relative;
+}
+
+
+/* ---------------------------------------------------------
+   INFORMATION ITEMS
+--------------------------------------------------------- */
+
+.admin-information-item {
+    position: relative;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.admin-information-item:hover {
+    background: #fbfdff;
+    transform: translateY(-1px);
+}
+
+.admin-information-item>svg {
+    filter: drop-shadow( 0 3px 6px rgba(8, 121, 202, 0.08));
+}
+
+
+/* ---------------------------------------------------------
+   DESCRIPTION
+--------------------------------------------------------- */
+
+.admin-description {
+    box-shadow: inset 0 0 0 1px rgba(8, 121, 202, 0.018);
+}
+
+.admin-description:hover {
+    box-shadow: inset 0 0 0 1px rgba(8, 121, 202, 0.035);
+}
+
+
+/* ---------------------------------------------------------
+   STATUS ACTION AREA
+--------------------------------------------------------- */
+
+.admin-status-actions {
+    position: relative;
+}
+
+
+/* ---------------------------------------------------------
+   STATUS BUTTONS
+--------------------------------------------------------- */
+
+.status-button {
+    isolation: isolate;
+}
+
+.status-button::after {
+    content: "";
+    position: absolute;
+    left: -110%;
+    top: 0;
+    width: 65%;
+    height: 100%;
+    background: linear-gradient( 90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transform: skewX(-20deg);
+    transition: left 0.5s ease;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.status-button:hover::after {
+    left: 140%;
+}
+
+
+/* ---------------------------------------------------------
+   ACTIVE STATUS EMPHASIS
+--------------------------------------------------------- */
+
+.status-button.approve,
+.status-button.service,
+.status-button.complete,
+.status-button.reject {
+    box-shadow: 0 4px 13px rgba(20, 30, 38, 0.025);
+}
+
+.status-button.approve:hover,
+.status-button.service:hover,
+.status-button.complete:hover,
+.status-button.reject:hover {
+    transform: translateY(-4px);
+}
+
+
+/* ---------------------------------------------------------
+   BOTTOM BACK
+--------------------------------------------------------- */
+
+.admin-bottom-back {
+    position: relative;
+    overflow: hidden;
+}
+
+.admin-bottom-back::after {
+    content: "";
+    position: absolute;
+    left: -100%;
+    top: 0;
+    width: 65%;
+    height: 100%;
+    background: linear-gradient( 90deg, transparent, rgba(255, 255, 255, 0.17), transparent);
+    transform: skewX(-20deg);
+    transition: left 0.5s ease;
+}
+
+.admin-bottom-back:hover::after {
+    left: 140%;
+}
+
+
+/* ---------------------------------------------------------
+   EMPTY STATE
+--------------------------------------------------------- */
+
+.admin-request-empty svg {
+    filter: drop-shadow( 0 8px 16px rgba(8, 121, 202, 0.08));
+}
+
+
+/* ---------------------------------------------------------
+   FOCUS
+--------------------------------------------------------- */
+
+button:focus-visible {
+    outline: 2px solid #0879ca;
+    outline-offset: 3px;
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+--------------------------------------------------------- */
+
+@media (max-width: 700px) {
+    .admin-detail-card:hover {
+        transform: translateY(-3px);
+    }
+    .status-button:hover {
+        transform: translateY(-2px);
+    }
+}
+
+
+/* ---------------------------------------------------------
+   REDUCED MOTION
+--------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+    .admin-detail-card::after,
+    .admin-information-card::before,
+    .admin-description-card::before,
+    .admin-status-card::before,
+    .status-button::after,
+    .admin-request-back::after,
+    .admin-bottom-back::after {
+        transition: none !important;
+    }
+}

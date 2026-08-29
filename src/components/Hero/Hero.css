@@ -1,0 +1,568 @@
+/* =====================================================
+   BMW HERO — FINAL POLISHED VERSION
+===================================================== */
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 680px;
+    overflow: hidden;
+    isolation: isolate;
+    background: #020304;
+    color: #ffffff;
+    font-family: "Inter", "Public Sans", "Plus Jakarta Sans", Arial, sans-serif;
+}
+
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
+
+.hero-background {
+    position: absolute;
+    inset: 0;
+    z-index: -5;
+    background-image: url("/hero.jpg");
+    background-size: cover;
+    background-position: center 40%;
+    background-repeat: no-repeat;
+    transform: scale(1.08);
+    animation: heroZoom 2.4s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+
+@keyframes heroZoom {
+    from {
+        opacity: 0;
+        transform: scale(1.1);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* =====================================================
+   DARK CINEMATIC OVERLAY
+===================================================== */
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -4;
+    background: linear-gradient( 90deg, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.68) 32%, rgba(0, 0, 0, 0.25) 67%, rgba(0, 0, 0, 0.48) 100%), linear-gradient( 0deg, rgba(0, 0, 0, 0.82) 0%, transparent 45%, rgba(0, 0, 0, 0.15) 100%);
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   BLUE ATMOSPHERE
+===================================================== */
+
+.hero-glow {
+    position: absolute;
+    z-index: -3;
+    width: 650px;
+    height: 400px;
+    left: 57%;
+    top: 53%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: radial-gradient( ellipse, rgba(0, 110, 255, 0.18) 0%, rgba(0, 110, 255, 0.08) 35%, transparent 72%);
+    filter: blur(75px);
+    pointer-events: none;
+    animation: glowPulse 7s ease-in-out infinite alternate;
+}
+
+@keyframes glowPulse {
+    from {
+        opacity: 0.45;
+        transform: translate(-50%, -50%) scale(0.92);
+    }
+    to {
+        opacity: 0.85;
+        transform: translate(-50%, -50%) scale(1.08);
+    }
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 80px 8% 70px;
+    pointer-events: none;
+}
+
+.hero-content-inner {
+    max-width: 720px;
+    pointer-events: auto;
+}
+
+
+/* =====================================================
+   EYEBROW
+===================================================== */
+
+.hero-eyebrow {
+    margin: 0 0 20px;
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translateY(18px);
+    animation: heroReveal 0.8s ease 0.25s forwards;
+}
+
+
+/* =====================================================
+   MAIN BMW TITLE
+===================================================== */
+
+.hero-title {
+    margin: 0;
+    font-size: clamp(76px, 9vw, 135px);
+    line-height: 0.84;
+    font-weight: 300;
+    letter-spacing: -0.055em;
+    color: #ffffff;
+    opacity: 0;
+    transform: translateY(35px);
+    animation: heroTitleReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+}
+
+@keyframes heroTitleReveal {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+        filter: blur(7px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+
+/* =====================================================
+   BLUE LINE
+===================================================== */
+
+.hero-line {
+    position: relative;
+    width: 82px;
+    height: 2px;
+    margin: 29px 0 25px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.hero-line span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #1685ff;
+    box-shadow: 0 0 18px rgba(22, 133, 255, 0.7);
+    transform: translateX(-100%);
+    animation: heroLineReveal 0.9s ease 0.85s forwards;
+}
+
+@keyframes heroLineReveal {
+    to {
+        transform: translateX(0);
+    }
+}
+
+
+/* =====================================================
+   SUBTITLE
+===================================================== */
+
+.hero-subtitle {
+    margin: 0;
+    font-size: clamp(30px, 4vw, 58px);
+    line-height: 0.98;
+    font-weight: 300;
+    letter-spacing: -0.045em;
+    color: #f7f9fb;
+    opacity: 0;
+    transform: translateY(22px);
+    animation: heroReveal 0.9s ease 0.7s forwards;
+}
+
+.hero-subtitle span {
+    color: rgba(255, 255, 255, 0.76);
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.hero-description {
+    max-width: 480px;
+    margin: 24px 0 0;
+    color: rgba(255, 255, 255, 0.62);
+    font-size: 13px;
+    line-height: 1.75;
+    font-weight: 400;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: heroReveal 0.9s ease 0.9s forwards;
+}
+
+
+/* =====================================================
+   BUTTON GROUP
+===================================================== */
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 32px;
+    opacity: 0;
+    transform: translateY(18px);
+    animation: heroReveal 0.9s ease 1.05s forwards;
+}
+
+
+/* =====================================================
+   COMMON BUTTON
+===================================================== */
+
+.hero-explore-button,
+.secondary-button {
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 0 20px;
+    cursor: pointer;
+    font-family: "Inter", "Public Sans", "Plus Jakarta Sans", Arial, sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: transform 0.35s ease, background 0.35s ease, color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+
+/* =====================================================
+   PRIMARY BUTTON
+===================================================== */
+
+.hero-explore-button {
+    min-width: 158px;
+    border: 1px solid #ffffff;
+    border-radius: 2px;
+    background: #ffffff;
+    color: #111417;
+}
+
+.hero-explore-button:hover {
+    transform: translateY(-4px);
+    background: #1685ff;
+    border-color: #1685ff;
+    color: #ffffff;
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.28), 0 0 25px rgba(22, 133, 255, 0.18);
+}
+
+.hero-explore-button:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+
+/* =====================================================
+   PRIMARY ARROW
+===================================================== */
+
+.hero-button-icon {
+    width: 27px;
+    height: 27px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 50%;
+    transition: transform 0.35s ease, border-color 0.35s ease;
+}
+
+.hero-explore-button:hover .hero-button-icon {
+    transform: translate(3px, -3px);
+    border-color: rgba(255, 255, 255, 0.55);
+}
+
+
+/* =====================================================
+   SECONDARY BUTTON
+===================================================== */
+
+.secondary-button {
+    min-width: 158px;
+    border: 1px solid rgba(255, 255, 255, 0.38);
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.025);
+    color: #ffffff;
+    backdrop-filter: blur(8px);
+}
+
+.secondary-button:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =====================================================
+   SECONDARY ARROW
+===================================================== */
+
+.secondary-arrow {
+    display: inline-flex;
+    transition: transform 0.35s ease;
+}
+
+.secondary-button:hover .secondary-arrow {
+    transform: translate(3px, -3px);
+}
+
+
+/* =====================================================
+   SCROLL INDICATOR
+===================================================== */
+
+.hero-scroll {
+    position: absolute;
+    left: 8%;
+    bottom: 32px;
+    z-index: 6;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.58);
+    cursor: pointer;
+    font-family: "Inter", "Public Sans", "Plus Jakarta Sans", Arial, sans-serif;
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.hero-scroll:hover {
+    color: #ffffff;
+    transform: translateY(3px);
+}
+
+.hero-scroll-icon {
+    width: 29px;
+    height: 29px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.hero-scroll:hover .hero-scroll-icon {
+    border-color: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+
+/* =====================================================
+   PAGE INDICATOR
+===================================================== */
+
+.hero-page-number {
+    position: absolute;
+    right: 7%;
+    bottom: 34px;
+    z-index: 6;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.42);
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+}
+
+.hero-page-number span:first-child {
+    color: #ffffff;
+}
+
+.hero-page-divider {
+    width: 32px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.28);
+}
+
+
+/* =====================================================
+   REVEAL ANIMATION
+===================================================== */
+
+@keyframes heroReveal {
+    from {
+        opacity: 0;
+        transform: translateY(22px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+    .hero-content {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+    .hero-scroll {
+        left: 6%;
+    }
+    .hero-page-number {
+        right: 6%;
+    }
+    .hero-glow {
+        left: 65%;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+    .hero {
+        min-height: 680px;
+        height: 100svh;
+    }
+    .hero-background {
+        background-position: 62% center;
+    }
+    .hero-overlay {
+        background: linear-gradient( 90deg, rgba(0, 0, 0, 0.94) 0%, rgba(0, 0, 0, 0.72) 55%, rgba(0, 0, 0, 0.4) 100%), linear-gradient( 0deg, rgba(0, 0, 0, 0.88), transparent 55%);
+    }
+    .hero-content {
+        padding: 80px 24px 80px;
+    }
+    .hero-content-inner {
+        max-width: 100%;
+    }
+    .hero-eyebrow {
+        margin-bottom: 17px;
+        font-size: 8px;
+        letter-spacing: 0.28em;
+    }
+    .hero-title {
+        font-size: clamp(72px, 23vw, 110px);
+    }
+    .hero-line {
+        width: 62px;
+        margin: 24px 0 21px;
+    }
+    .hero-subtitle {
+        font-size: clamp(27px, 8vw, 42px);
+    }
+    .hero-description {
+        max-width: 350px;
+        font-size: 12px;
+        line-height: 1.7;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        max-width: 245px;
+        margin-top: 27px;
+    }
+    .hero-explore-button,
+    .secondary-button {
+        width: 100%;
+    }
+    .hero-scroll {
+        left: 24px;
+        bottom: 22px;
+    }
+    .hero-scroll-text {
+        display: none;
+    }
+    .hero-page-number {
+        right: 24px;
+        bottom: 27px;
+    }
+    .hero-glow {
+        width: 350px;
+        height: 300px;
+        left: 65%;
+    }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 380px) {
+    .hero-content {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .hero-title {
+        font-size: 68px;
+    }
+    .hero-subtitle {
+        font-size: 26px;
+    }
+    .hero-description {
+        font-size: 11px;
+    }
+    .hero-buttons {
+        max-width: 225px;
+    }
+    .hero-scroll {
+        left: 20px;
+    }
+    .hero-page-number {
+        right: 20px;
+    }
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .hero *,
+    .hero-background,
+    .hero-glow {
+        animation: none !important;
+        transition: none !important;
+    }
+}

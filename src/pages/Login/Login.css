@@ -1,0 +1,865 @@
+/* =====================================================
+   LOGIN PAGE
+===================================================== */
+
+.login-page {
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 48% 52%;
+    background: #ffffff;
+    color: #15171a;
+}
+
+
+/* =====================================================
+   LEFT VISUAL
+===================================================== */
+
+.login-visual {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    background: #07111d;
+}
+
+
+/* =====================================================
+   CAR IMAGE
+===================================================== */
+
+.login-car {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-car img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.82;
+    filter: brightness(0.62) contrast(1.08);
+    transform: scale(1.03);
+}
+
+
+/* =====================================================
+   LEFT IMAGE OVERLAY
+===================================================== */
+
+.login-visual-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: linear-gradient( 180deg, rgba(0, 0, 0, 0.28) 0%, rgba(3, 10, 18, 0.08) 40%, rgba(3, 8, 14, 0.93) 100%);
+}
+
+
+/* =====================================================
+   BMW BRAND
+===================================================== */
+
+.login-brand {
+    position: absolute;
+    top: 42px;
+    left: 50px;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: #ffffff;
+}
+
+.login-logo {
+    width: 88px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-logo img {
+    width: 75px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.login-brand h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+}
+
+.login-brand p {
+    margin: 5px 0 0;
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    opacity: 0.7;
+}
+
+
+/* =====================================================
+   LEFT CONTENT
+===================================================== */
+
+.login-visual-content {
+    position: absolute;
+    left: 50px;
+    bottom: 65px;
+    z-index: 5;
+    max-width: 560px;
+    color: #ffffff;
+}
+
+.login-small-title {
+    display: block;
+    margin-bottom: 19px;
+    color: #60b4f5;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.27em;
+    text-transform: uppercase;
+}
+
+.login-visual-content h1 {
+    margin: 0;
+    font-size: clamp(40px, 4vw, 64px);
+    line-height: 0.94;
+    font-weight: 300;
+    letter-spacing: -0.045em;
+}
+
+.login-blue-line {
+    width: 44px;
+    height: 2px;
+    margin: 27px 0 19px;
+    background: #1688e8;
+}
+
+.login-visual-content>p {
+    max-width: 410px;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 15px;
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+
+/* =====================================================
+   RIGHT SIDE
+===================================================== */
+
+.login-form-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #ffffff;
+}
+
+
+/* =====================================================
+   LANGUAGE
+===================================================== */
+
+.login-language {
+    position: absolute;
+    top: 32px;
+    right: 42px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #33383e;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.language-arrow {
+    margin-left: 3px;
+    font-size: 16px;
+}
+
+
+/* =====================================================
+   FORM CONTAINER
+===================================================== */
+
+.login-form-container {
+    width: min(500px, 80%);
+    margin: 0 auto;
+    padding: 45px 0 90px;
+}
+
+
+/* =====================================================
+   HEADING
+===================================================== */
+
+.login-heading {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.login-eyebrow {
+    margin: 0 0 14px;
+    color: #1479c9;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+}
+
+.login-heading h2 {
+    margin: 0;
+    color: #111316;
+    font-size: 40px;
+    line-height: 1.1;
+    font-weight: 500;
+    letter-spacing: -0.025em;
+}
+
+.login-heading>p:last-child {
+    margin: 12px 0 0;
+    color: #777d84;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.login-form {
+    width: 100%;
+}
+
+
+/* =====================================================
+   INPUT
+===================================================== */
+
+.login-input {
+    height: 62px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+    padding: 0 18px;
+    border: 1px solid #dfe2e5;
+    border-radius: 4px;
+    background: #ffffff;
+    color: #656b72;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.login-input:focus-within {
+    border-color: #1684dd;
+    box-shadow: 0 0 0 3px rgba(22, 132, 221, 0.08);
+}
+
+
+/* INPUT TEXT */
+
+.login-input input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #15171a;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+
+/* PLACEHOLDER */
+
+.login-input input::placeholder {
+    color: #858b92;
+    font-size: 15px;
+}
+
+
+/* PASSWORD TOGGLE */
+
+.password-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #737980;
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   FORGOT PASSWORD
+===================================================== */
+
+.forgot-password {
+    display: flex;
+    justify-content: flex-end;
+    margin: 3px 0 20px;
+}
+
+.forgot-password button {
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #086bd4;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.forgot-password button:hover {
+    text-decoration: underline;
+}
+
+
+/* =====================================================
+   LOGIN BUTTON
+===================================================== */
+
+.login-submit {
+    width: 100%;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    border: none;
+    border-radius: 4px;
+    background: linear-gradient( 100deg, #0865d1, #087fe2);
+    color: #ffffff;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.login-submit:hover {
+    box-shadow: 0 8px 25px rgba(8, 105, 210, 0.25);
+    transform: translateY(-2px);
+}
+
+.login-submit:active {
+    transform: scale(0.98);
+}
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.login-contact {
+    margin: 26px 0 0;
+    text-align: center;
+    color: #777d84;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.login-contact button {
+    margin-left: 5px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #086bd4;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.login-contact button:hover {
+    text-decoration: underline;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.login-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    min-height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 26px;
+    border-top: 1px solid #eeeeef;
+    color: #858a90;
+    font-size: 10px;
+    letter-spacing: 0.02em;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+    .login-page {
+        grid-template-columns: 1fr;
+    }
+    .login-visual {
+        display: none;
+    }
+    .login-form-section {
+        min-height: 100vh;
+    }
+    .login-form-container {
+        width: min(500px, 88%);
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+    .login-form-container {
+        width: 88%;
+        padding: 65px 0 85px;
+    }
+    .login-heading h2 {
+        font-size: 31px;
+    }
+    .login-heading>p:last-child {
+        font-size: 14px;
+    }
+    .login-input {
+        height: 59px;
+    }
+    .login-input input {
+        font-size: 15px;
+    }
+    .login-input input::placeholder {
+        font-size: 14px;
+    }
+    .login-submit {
+        height: 55px;
+    }
+    .login-contact {
+        font-size: 13px;
+    }
+    .login-contact button {
+        font-size: 13px;
+    }
+    .login-footer {
+        gap: 10px;
+        padding: 10px;
+        flex-wrap: wrap;
+        font-size: 8px;
+    }
+    .login-language {
+        top: 20px;
+        right: 20px;
+        font-size: 12px;
+    }
+}
+
+
+/* =========================================================
+   BACK TO DASHBOARD BUTTON
+========================================================= */
+
+.login-back-button {
+    position: absolute;
+    top: 30px;
+    left: 35px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 12px 18px;
+    background: #111111;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    z-index: 9999;
+    transition: all 0.3s ease;
+}
+
+.login-back-button:hover {
+    background: #0879ca;
+    transform: translateX(-3px);
+}
+
+
+/* =========================================================
+   BMW LOGIN — FINAL PREMIUM POLISH
+========================================================= */
+
+
+/* ---------------------------------------------------------
+   LEFT IMAGE — CINEMATIC DEPTH
+--------------------------------------------------------- */
+
+.login-car img {
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease;
+}
+
+.login-visual:hover .login-car img {
+    transform: scale(1.055);
+    filter: brightness(0.66) contrast(1.1);
+}
+
+
+/* Subtle BMW-blue atmosphere */
+
+.login-visual::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient( circle at 72% 42%, rgba(8, 121, 202, 0.13), transparent 38%);
+    z-index: 3;
+    pointer-events: none;
+}
+
+
+/* ---------------------------------------------------------
+   BRAND
+--------------------------------------------------------- */
+
+.login-brand {
+    transition: transform 0.35s ease;
+}
+
+.login-brand:hover {
+    transform: translateX(3px);
+}
+
+.login-brand h2 {
+    transition: letter-spacing 0.35s ease;
+}
+
+.login-brand:hover h2 {
+    letter-spacing: 0.19em;
+}
+
+
+/* ---------------------------------------------------------
+   LEFT CONTENT
+--------------------------------------------------------- */
+
+.login-visual-content {
+    animation: loginContentReveal 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes loginContentReveal {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-blue-line {
+    position: relative;
+    overflow: hidden;
+}
+
+.login-blue-line::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #ffffff;
+    transform: translateX(-105%);
+    animation: loginLineReveal 1s 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes loginLineReveal {
+    to {
+        transform: translateX(105%);
+    }
+}
+
+
+/* ---------------------------------------------------------
+   RIGHT FORM AREA
+--------------------------------------------------------- */
+
+.login-form-section {
+    box-shadow: -12px 0 40px rgba(15, 25, 32, 0.035);
+}
+
+
+/* ---------------------------------------------------------
+   FORM CONTAINER
+--------------------------------------------------------- */
+
+.login-form-container {
+    animation: loginFormReveal 0.9s 0.12s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes loginFormReveal {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ---------------------------------------------------------
+   HEADING
+--------------------------------------------------------- */
+
+.login-heading h2 {
+    letter-spacing: -0.035em;
+}
+
+.login-eyebrow {
+    position: relative;
+    display: inline-block;
+}
+
+.login-eyebrow::after {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 1px;
+    margin: 9px auto 0;
+    background: #0879ca;
+    opacity: 0.65;
+}
+
+
+/* ---------------------------------------------------------
+   INPUTS
+--------------------------------------------------------- */
+
+.login-input {
+    position: relative;
+    box-shadow: 0 3px 12px rgba(20, 30, 38, 0.018);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.login-input:hover {
+    border-color: #cbd2d7;
+    box-shadow: 0 5px 18px rgba(20, 30, 38, 0.035);
+}
+
+.login-input:focus-within {
+    transform: translateY(-1px);
+    box-shadow: 0 0 0 3px rgba(22, 132, 221, 0.08), 0 9px 24px rgba(8, 121, 202, 0.055);
+}
+
+
+/* Input icon */
+
+.login-input>svg {
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.login-input:focus-within>svg {
+    color: #0879ca;
+    transform: scale(1.05);
+}
+
+
+/* Password button */
+
+.password-toggle {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.password-toggle:hover {
+    background: #f2f6f9;
+    color: #0879ca;
+}
+
+
+/* ---------------------------------------------------------
+   FORGOT PASSWORD
+--------------------------------------------------------- */
+
+.forgot-password button {
+    position: relative;
+    text-decoration: none;
+}
+
+.forgot-password button::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 1px;
+    background: #0879ca;
+    transition: width 0.3s ease;
+}
+
+.forgot-password button:hover::after {
+    width: 100%;
+}
+
+
+/* ---------------------------------------------------------
+   LOGIN BUTTON
+--------------------------------------------------------- */
+
+.login-submit {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 22px rgba(8, 105, 210, 0.17);
+}
+
+.login-submit::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 70%;
+    height: 100%;
+    background: linear-gradient( 90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transform: skewX(-20deg);
+    transition: left 0.6s ease;
+    pointer-events: none;
+}
+
+.login-submit:hover::before {
+    left: 140%;
+}
+
+.login-submit:hover {
+    box-shadow: 0 13px 30px rgba(8, 105, 210, 0.25);
+}
+
+
+/* ---------------------------------------------------------
+   CONTACT
+--------------------------------------------------------- */
+
+.login-contact button {
+    position: relative;
+}
+
+.login-contact button::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 1px;
+    background: #0879ca;
+    transition: width 0.3s ease;
+}
+
+.login-contact button:hover::after {
+    width: 100%;
+}
+
+
+/* ---------------------------------------------------------
+   LANGUAGE
+--------------------------------------------------------- */
+
+.login-language {
+    transition: color 0.25s ease;
+}
+
+.login-language:hover {
+    color: #0879ca;
+}
+
+
+/* ---------------------------------------------------------
+   FOOTER
+--------------------------------------------------------- */
+
+.login-footer {
+    background: linear-gradient( 180deg, transparent, rgba(248, 250, 251, 0.7));
+}
+
+
+/* ---------------------------------------------------------
+   BACK BUTTON
+--------------------------------------------------------- */
+
+.login-back-button {
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.12);
+}
+
+.login-back-button:hover {
+    box-shadow: 0 10px 25px rgba(8, 121, 202, 0.18);
+}
+
+
+/* ---------------------------------------------------------
+   ACCESSIBILITY
+--------------------------------------------------------- */
+
+.login-input input:focus-visible,
+.login-submit:focus-visible,
+.password-toggle:focus-visible,
+.forgot-password button:focus-visible,
+.login-contact button:focus-visible,
+.login-back-button:focus-visible {
+    outline: 2px solid #0879ca;
+    outline-offset: 3px;
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+--------------------------------------------------------- */
+
+@media (max-width: 900px) {
+    .login-form-section {
+        box-shadow: none;
+    }
+    .login-form-container {
+        animation-delay: 0.05s;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   REDUCED MOTION
+--------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+    .login-car img,
+    .login-brand,
+    .login-form-container,
+    .login-visual-content,
+    .login-submit::before,
+    .login-blue-line::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}

@@ -1,0 +1,911 @@
+/* =========================================================
+   BMW DOCUMENTS
+   PREMIUM WHITE EDITION
+========================================================= */
+
+.documents-page {
+    min-height: 100vh;
+    width: 100%;
+    background: #ffffff;
+    color: #171a1d;
+    font-family: "Inter", "Public Sans", "Plus Jakarta Sans", "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    animation: documentsFade 0.65s ease both;
+}
+
+
+/* =========================================================
+   PAGE ANIMATION
+========================================================= */
+
+@keyframes documentsFade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes documentsReveal {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.documents-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    min-height: 96px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    padding: 0 58px;
+    background: rgba(255, 255, 255, 0.97);
+    border-bottom: 1px solid #e1e5e8;
+    box-shadow: 0 5px 22px rgba(0, 0, 0, 0.035);
+    backdrop-filter: blur(14px);
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.documents-back-button {
+    height: 45px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 0 18px;
+    border: 1px solid #d9dee2;
+    border-radius: 5px;
+    background: #ffffff;
+    color: #30363b;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.documents-back-button:hover {
+    background: #151a1e;
+    color: #ffffff;
+    border-color: #151a1e;
+    transform: translateX(-4px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.documents-back-button:active {
+    transform: translateX(-2px) scale(0.98);
+}
+
+
+/* =========================================================
+   HEADER TITLE
+========================================================= */
+
+.documents-title {
+    min-height: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 32px;
+    border-left: 1px solid #e0e4e7;
+}
+
+.documents-title span {
+    display: block;
+    margin-bottom: 7px;
+    color: #0879ca;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.21em;
+    text-transform: uppercase;
+}
+
+.documents-title h1 {
+    margin: 0;
+    color: #20252a;
+    font-size: 29px;
+    line-height: 1;
+    font-weight: 500;
+    letter-spacing: -0.045em;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.documents-content {
+    width: min(1100px, calc(100% - 80px));
+    margin: 0 auto;
+    padding: 52px 0 90px;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.documents-intro {
+    margin-bottom: 30px;
+    animation: documentsReveal 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both;
+}
+
+.documents-intro p,
+.documents-section-heading p,
+.documents-help p {
+    margin: 0 0 9px;
+    color: #0879ca;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.21em;
+    text-transform: uppercase;
+}
+
+.documents-intro h2 {
+    margin: 0 0 11px;
+    color: #181d21;
+    font-size: clamp(35px, 4vw, 42px);
+    line-height: 1.05;
+    font-weight: 450;
+    letter-spacing: -0.055em;
+}
+
+.documents-intro span {
+    display: block;
+    color: #7d858c;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   VEHICLE CARD
+========================================================= */
+
+.documents-vehicle-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 24px 28px;
+    margin-bottom: 48px;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid #dfe3e6;
+    border-radius: 9px;
+    box-shadow: 0 9px 28px rgba(0, 0, 0, 0.035);
+    animation: documentsReveal 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+    transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
+}
+
+.documents-vehicle-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: #0879ca;
+    transform: scaleY(0);
+    transform-origin: center;
+    transition: transform 0.4s ease;
+}
+
+.documents-vehicle-card:hover {
+    transform: translateY(-3px);
+    border-color: #d3dde2;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
+}
+
+.documents-vehicle-card:hover::before {
+    transform: scaleY(1);
+}
+
+
+/* =========================================================
+   VEHICLE ICON
+========================================================= */
+
+.documents-vehicle-icon {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid #d7e9f5;
+    border-radius: 9px;
+    background: #edf6fd;
+    color: #0879ca;
+    transition: transform 0.35s ease, background 0.35s ease;
+}
+
+.documents-vehicle-card:hover .documents-vehicle-icon {
+    transform: scale(1.07) rotate(-3deg);
+    background: #e5f3fb;
+}
+
+
+/* =========================================================
+   VEHICLE TEXT
+========================================================= */
+
+.documents-vehicle-card small,
+.documents-owner small {
+    display: block;
+    margin-bottom: 5px;
+    color: #92999f;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+}
+
+.documents-vehicle-card h3 {
+    margin: 0 0 4px;
+    color: #30363b;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+}
+
+.documents-vehicle-card span {
+    color: #858d93;
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   OWNER
+========================================================= */
+
+.documents-owner {
+    margin-left: auto;
+    padding-left: 40px;
+    border-left: 1px solid #edf0f1;
+}
+
+.documents-owner strong {
+    color: #30363b;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.documents-section-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 21px;
+    animation: documentsReveal 0.7s ease 0.25s both;
+}
+
+.documents-section-heading h2 {
+    margin: 0;
+    color: #20252a;
+    font-size: 29px;
+    line-height: 1.15;
+    font-weight: 450;
+    letter-spacing: -0.045em;
+}
+
+.documents-section-heading>span {
+    color: #92999f;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+
+/* =========================================================
+   DOCUMENT GRID
+========================================================= */
+
+.documents-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+
+/* =========================================================
+   DOCUMENT CARD
+========================================================= */
+
+.document-card {
+    position: relative;
+    min-height: 190px;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid #dfe3e6;
+    border-radius: 9px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.025);
+    animation: documentsReveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) var(--document-delay, 0s) both;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.document-card::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #0879ca;
+    transition: width 0.4s ease;
+}
+
+.document-card:hover {
+    transform: translateY(-5px);
+    border-color: #ccd8df;
+    box-shadow: 0 17px 38px rgba(20, 30, 38, 0.065);
+}
+
+.document-card:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   DOCUMENT ICON
+========================================================= */
+
+.document-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    border: 1px solid #d7e9f5;
+    border-radius: 8px;
+    background: #edf6fd;
+    color: #0879ca;
+    transition: transform 0.35s ease, background 0.35s ease;
+}
+
+.document-card:hover .document-icon {
+    transform: scale(1.08) rotate(-3deg);
+    background: #e5f3fb;
+}
+
+
+/* =========================================================
+   DOCUMENT INFORMATION
+========================================================= */
+
+.document-information {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.document-information h3 {
+    margin: 0 0 6px;
+    color: #252b30;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+}
+
+.document-information p {
+    margin: 0;
+    color: #858d93;
+    font-size: 11px;
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.document-status {
+    padding: 6px 10px;
+    border: 1px solid #d1eadb;
+    border-radius: 20px;
+    background: #edf8f2;
+    color: #248552;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.document-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 18px;
+    border-top: 1px solid #edf0f1;
+}
+
+.document-actions button {
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* =========================================================
+   VIEW
+========================================================= */
+
+.document-view-button {
+    flex: 1;
+    background: #15191c;
+    color: #ffffff;
+    border: 1px solid #15191c;
+}
+
+.document-view-button:hover {
+    background: #0879ca;
+    border-color: #0879ca;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(8, 121, 202, 0.18);
+}
+
+
+/* =========================================================
+   DOWNLOAD
+========================================================= */
+
+.document-download-button {
+    flex: 1;
+    background: #ffffff;
+    color: #30363b;
+    border: 1px solid #d9dee2;
+}
+
+.document-download-button:hover {
+    background: #f7f9fa;
+    border-color: #aeb8bf;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   HELP
+========================================================= */
+
+.documents-help {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 24px;
+    padding: 28px 30px;
+    background: #ffffff;
+    border: 1px solid #dfe3e6;
+    border-radius: 9px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.025);
+    animation: documentsReveal 0.75s ease 0.4s both;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.documents-help:hover {
+    border-color: #d2dce1;
+    box-shadow: 0 13px 30px rgba(0, 0, 0, 0.05);
+}
+
+.documents-help h2 {
+    margin: 0 0 8px;
+    color: #252b30;
+    font-size: 21px;
+    font-weight: 450;
+    letter-spacing: -0.03em;
+}
+
+.documents-help span {
+    color: #8c949a;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   HELP ICON
+========================================================= */
+
+.documents-help-icon {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid #d1eadb;
+    border-radius: 50%;
+    background: #edf8f2;
+    color: #248552;
+    transition: transform 0.35s ease;
+}
+
+.documents-help:hover .documents-help-icon {
+    transform: scale(1.07) rotate(4deg);
+}
+
+
+/* =========================================================
+   FOCUS
+========================================================= */
+
+.documents-back-button:focus-visible,
+.document-actions button:focus-visible {
+    outline: 2px solid #0879ca;
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+    .documents-header {
+        padding: 0 35px;
+    }
+    .documents-content {
+        width: calc(100% - 60px);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 750px) {
+    .documents-header {
+        min-height: auto;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+        padding: 22px 20px;
+    }
+    .documents-back-button {
+        width: 100%;
+    }
+    .documents-title {
+        width: 100%;
+        min-height: auto;
+        padding: 18px 0 0;
+        border-left: none;
+        border-top: 1px solid #e0e4e7;
+    }
+    .documents-content {
+        width: calc(100% - 30px);
+        padding: 32px 0 60px;
+    }
+    .documents-intro h2 {
+        font-size: 31px;
+    }
+    .documents-vehicle-card {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+    .documents-owner {
+        width: 100%;
+        margin-left: 0;
+        padding: 18px 0 0;
+        border-left: none;
+        border-top: 1px solid #edf0f1;
+    }
+    .documents-grid {
+        grid-template-columns: 1fr;
+    }
+    .documents-section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 9px;
+    }
+    .documents-help {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .documents-help-icon {
+        order: -1;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 450px) {
+    .documents-content {
+        width: calc(100% - 24px);
+    }
+    .documents-intro h2 {
+        font-size: 28px;
+    }
+    .document-card {
+        padding: 21px;
+    }
+    .document-information {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .document-actions {
+        flex-direction: column;
+    }
+    .document-actions button {
+        width: 100%;
+    }
+    .documents-help {
+        padding: 23px 20px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .documents-page,
+    .documents-intro,
+    .documents-vehicle-card,
+    .documents-section-heading,
+    .document-card,
+    .documents-help {
+        animation: none !important;
+    }
+    * {
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+/* =========================================================
+   FINAL BMW DOCUMENTS POLISH
+========================================================= */
+
+
+/* Premium page spacing */
+
+.documents-page {
+    background: linear-gradient( 180deg, #ffffff 0%, #ffffff 72%, #fafbfc 100%);
+}
+
+
+/* Header subtle depth */
+
+.documents-header {
+    box-shadow: 0 8px 30px rgba(15, 25, 35, 0.045);
+}
+
+
+/* Vehicle card premium glow */
+
+.documents-vehicle-card {
+    isolation: isolate;
+}
+
+.documents-vehicle-card::after {
+    content: "";
+    position: absolute;
+    width: 320px;
+    height: 160px;
+    right: -100px;
+    top: -100px;
+    background: radial-gradient( circle, rgba(8, 121, 202, 0.055), transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+
+/* Document cards feel more premium */
+
+.document-card {
+    isolation: isolate;
+}
+
+.document-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient( 135deg, rgba(8, 121, 202, 0.025), transparent 42%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.document-card:hover::before {
+    opacity: 1;
+}
+
+
+/* Icon becomes slightly more refined */
+
+.document-icon {
+    box-shadow: inset 0 0 0 1px rgba(8, 121, 202, 0.025);
+}
+
+
+/* Status badge */
+
+.document-status {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.document-card:hover .document-status {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 12px rgba(36, 133, 82, 0.08);
+}
+
+
+/* Better action buttons */
+
+.document-actions button {
+    position: relative;
+    overflow: hidden;
+}
+
+.document-actions button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 70%;
+    height: 100%;
+    background: linear-gradient( 90deg, transparent, rgba(255, 255, 255, 0.14), transparent);
+    transform: skewX(-20deg);
+    transition: left 0.55s ease;
+    pointer-events: none;
+}
+
+.document-actions button:hover::after {
+    left: 140%;
+}
+
+
+/* View button */
+
+.document-view-button:hover {
+    box-shadow: 0 10px 25px rgba(8, 121, 202, 0.2);
+}
+
+
+/* Vehicle icon breathing effect */
+
+.documents-vehicle-icon {
+    box-shadow: 0 5px 16px rgba(8, 121, 202, 0.045);
+}
+
+
+/* Help section */
+
+.documents-help {
+    position: relative;
+    overflow: hidden;
+}
+
+.documents-help::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: #0879ca;
+    opacity: 0.85;
+}
+
+
+/* Section heading accent */
+
+.documents-section-heading {
+    position: relative;
+    padding-left: 15px;
+}
+
+.documents-section-heading::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 2px;
+    height: 34px;
+    background: #0879ca;
+}
+
+
+/* Smooth document entrance */
+
+.document-card:nth-child(1) {
+    --document-delay: 0.12s;
+}
+
+.document-card:nth-child(2) {
+    --document-delay: 0.18s;
+}
+
+.document-card:nth-child(3) {
+    --document-delay: 0.24s;
+}
+
+.document-card:nth-child(4) {
+    --document-delay: 0.30s;
+}
+
+.document-card:nth-child(5) {
+    --document-delay: 0.36s;
+}
+
+.document-card:nth-child(6) {
+    --document-delay: 0.42s;
+}
+
+
+/* Better mobile touch interaction */
+
+@media (max-width: 750px) {
+    .document-card:hover {
+        transform: translateY(-3px);
+    }
+    .documents-vehicle-card:hover {
+        transform: translateY(-2px);
+    }
+    .documents-section-heading::before {
+        height: 30px;
+    }
+}
+
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+    .document-card::after,
+    .document-card::before,
+    .document-actions button::after {
+        transition: none !important;
+    }
+}

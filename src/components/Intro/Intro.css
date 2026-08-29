@@ -1,0 +1,203 @@
+.intro {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient( circle at center, #07111c 0%, #020406 35%, #000000 75%);
+    perspective: 1200px;
+    animation: introExit 1.4s cubic-bezier(0.65, 0, 0.35, 1) 3.4s forwards;
+}
+
+
+/* =====================================
+   3D SCENE
+===================================== */
+
+.intro-scene {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+}
+
+
+/* =====================================
+   BMW LOGO 3D CONTAINER
+===================================== */
+
+.logo-3d {
+    position: relative;
+    width: 500px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+    opacity: 0;
+    transform: rotateX(35deg) rotateY(-35deg) scale(0.45);
+    animation: logo3DReveal 1.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+}
+
+
+/* =====================================
+   BMW IMAGE
+===================================== */
+
+.logo-3d img {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transform: translateZ(15px);
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.25)) drop-shadow(0 0 30px rgba(0, 120, 255, 0.25));
+}
+
+
+/* =====================================
+   3D DEPTH
+===================================== */
+
+.logo-depth {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient( 145deg, #5e6670, #15191d 45%, #050607);
+    transform: translateZ(-5px) translateX(7px) translateY(7px);
+    box-shadow: 8px 8px 0 #090b0d, 12px 12px 0 #060708, 0 0 35px rgba(0, 100, 255, 0.2);
+}
+
+
+/* =====================================
+   METALLIC RING
+===================================== */
+
+.logo-3d::before {
+    content: "";
+    position: absolute;
+    inset: -7px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    transform: translateZ(2px);
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.15), 0 0 20px rgba(0, 120, 255, 0.2);
+}
+
+
+/* =====================================
+   LIGHT REFLECTION
+===================================== */
+
+
+/* =====================================
+   3D LOGO ANIMATION
+===================================== */
+
+@keyframes logo3DReveal {
+    0% {
+        opacity: 0;
+        transform: rotateX(70deg) rotateY(-70deg) rotateZ(-15deg) scale(0.35);
+        filter: blur(12px);
+    }
+    45% {
+        opacity: 1;
+        transform: rotateX(15deg) rotateY(15deg) rotateZ(3deg) scale(1.08);
+        filter: blur(0);
+    }
+    70% {
+        transform: rotateX(-5deg) rotateY(-5deg) rotateZ(-1deg) scale(0.98);
+    }
+    100% {
+        opacity: 1;
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1);
+    }
+}
+
+
+/* =====================================
+   REFLECTION
+===================================== */
+
+@keyframes logoReflection {
+    0% {
+        left: -60%;
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    100% {
+        left: 120%;
+        opacity: 0;
+    }
+}
+
+
+/* =====================================
+   TAGLINE
+===================================== */
+
+.intro-tagline {
+    margin-top: 30px;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 0.55em;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateY(20px) translateZ(0);
+    animation: taglineReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.65s forwards;
+}
+
+@keyframes taglineReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) translateZ(-20px);
+        letter-spacing: 0.25em;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) translateZ(0);
+        letter-spacing: 0.55em;
+    }
+}
+
+
+/* =====================================
+   INTRO EXIT
+===================================== */
+
+@keyframes introExit {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    65% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.08);
+        visibility: hidden;
+    }
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 600px) {
+    .logo-3d {
+        width: 90px;
+        height: 90px;
+    }
+    .intro-tagline {
+        font-size: 8px;
+        letter-spacing: 0.4em;
+    }
+}

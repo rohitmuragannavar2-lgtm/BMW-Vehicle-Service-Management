@@ -1,0 +1,471 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 82px;
+    padding: 0 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+    background: linear-gradient( 180deg, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.15));
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    opacity: 0;
+}
+
+
+/* =====================================
+   BRAND
+===================================== */
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 140px;
+}
+
+.nav-logo {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-logo::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    transition: all 0.4s ease;
+}
+
+.nav-logo:hover::before {
+    border-color: #1685ff;
+    box-shadow: 0 0 20px rgba(22, 133, 255, 0.4);
+}
+
+.nav-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.5s ease;
+}
+
+.nav-logo:hover img {
+    transform: rotate(15deg) scale(1.08);
+}
+
+.brand-name {
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0.35em;
+    color: #fff;
+}
+
+
+/* =====================================
+   NAV LINKS
+===================================== */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    height: 82px;
+    color: rgba(255, 255, 255, 0.62);
+    text-decoration: none;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    transition: color 0.35s ease;
+}
+
+.nav-item span {
+    color: rgba(255, 255, 255, 0.25);
+    font-size: 7px;
+    transition: color 0.35s ease;
+}
+
+.nav-item::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #1685ff;
+    box-shadow: 0 0 12px rgba(22, 133, 255, 0.7);
+    transition: width 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.nav-item:hover {
+    color: #fff;
+}
+
+.nav-item:hover span {
+    color: #1685ff;
+}
+
+.nav-item:hover::after {
+    width: 100%;
+}
+
+.nav-item.active {
+    color: #fff;
+}
+
+.nav-item.active::after {
+    width: 100%;
+}
+
+
+/* =====================================
+   ACTIONS
+===================================== */
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 180px;
+    justify-content: flex-end;
+}
+
+.login-button {
+    height: 42px;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    transition: all 0.3s ease;
+}
+
+.login-button:hover {
+    color: #fff;
+}
+
+.login-button svg {
+    transition: transform 0.3s ease;
+}
+
+.login-button:hover svg {
+    transform: translateY(-2px);
+}
+
+
+/* =====================================
+   REGISTER BUTTON
+===================================== */
+
+.register-button {
+    position: relative;
+    height: 42px;
+    padding: 0 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.04);
+    color: #fff;
+    cursor: pointer;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    transition: border-color 0.35s ease, background 0.35s ease;
+}
+
+.register-button::before {
+    content: "";
+    position: absolute;
+    left: -100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient( 90deg, transparent, rgba(22, 133, 255, 0.25), transparent);
+    transition: left 0.6s ease;
+}
+
+.register-button:hover::before {
+    left: 100%;
+}
+
+.register-button:hover {
+    border-color: #1685ff;
+    background: rgba(22, 133, 255, 0.08);
+}
+
+.register-button svg {
+    transition: transform 0.3s ease;
+}
+
+.register-button:hover svg {
+    transform: translate(3px, -3px);
+}
+
+
+/* =====================================
+   MENU
+===================================== */
+
+.menu-button {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.25);
+    color: #ffffff;
+    cursor: pointer;
+    position: relative;
+    z-index: 200;
+    transition: color 0.3s ease, background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.menu-button svg {
+    width: 23px;
+    height: 23px;
+    display: block;
+    color: #ffffff;
+    stroke-width: 1.6;
+}
+
+.menu-button:hover {
+    color: #1685ff;
+    background: rgba(22, 133, 255, 0.08);
+    border-color: rgba(22, 133, 255, 0.65);
+    transform: translateY(-1px);
+}
+
+.menu-button:hover svg {
+    color: #1685ff;
+}
+
+.menu-button:hover {
+    border-color: #1685ff;
+    color: #1685ff;
+}
+
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 1100px) {
+    .nav-links {
+        gap: 18px;
+    }
+    .nav-item {
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 900px) {
+    .navbar {
+        padding: 0 20px;
+    }
+    .nav-links {
+        display: none;
+    }
+    .menu-button {
+        display: flex;
+    }
+}
+
+@media (max-width: 500px) {
+    .brand-name {
+        display: none;
+    }
+    .nav-brand {
+        min-width: auto;
+    }
+    .nav-actions {
+        min-width: auto;
+    }
+    .login-button {
+        display: none;
+    }
+}
+
+.nav-service-button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   RESPONSIVE NAVBAR
+========================================================= */
+
+@media (max-width: 1100px) {
+    .nav-links {
+        gap: 18px;
+    }
+    .nav-item {
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 900px) {
+    .navbar {
+        height: 72px;
+        padding: 0 22px;
+    }
+    .nav-links {
+        display: none;
+    }
+    .nav-actions {
+        min-width: auto;
+        display: flex;
+        gap: 10px;
+    }
+    .login-button,
+    .register-button {
+        display: none;
+    }
+    .menu-button {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    .nav-logo {
+        width: 64px;
+        height: 64px;
+    }
+}
+
+@media (max-width: 500px) {
+    .navbar {
+        height: 68px;
+        padding: 0 16px;
+    }
+    .brand-name {
+        display: none;
+    }
+    .nav-brand {
+        min-width: auto;
+    }
+    .nav-actions {
+        min-width: auto;
+    }
+    .menu-button {
+        width: 42px;
+        height: 42px;
+    }
+    .menu-button svg {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.mobile-menu {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .mobile-menu {
+        position: fixed;
+        top: 72px;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        padding: 18px 22px 24px;
+        background: rgba(4, 7, 10, 0.97);
+        backdrop-filter: blur(20px);
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.28);
+        z-index: 150;
+        animation: mobileMenuIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    .mobile-menu a,
+    .mobile-menu button {
+        width: 100%;
+        min-height: 52px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0 8px;
+        border: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        background: transparent;
+        color: rgba(255, 255, 255, 0.78);
+        text-decoration: none;
+        font-family: inherit;
+        font-size: 10px;
+        letter-spacing: 0.2em;
+        cursor: pointer;
+        transition: color 0.25s ease, padding-left 0.25s ease;
+    }
+    .mobile-menu a:hover,
+    .mobile-menu button:hover {
+        color: #1685ff;
+        padding-left: 14px;
+    }
+    .mobile-menu .mobile-login {
+        justify-content: center;
+        margin-top: 16px;
+        border: 1px solid rgba(22, 133, 255, 0.55);
+        background: rgba(22, 133, 255, 0.08);
+        color: #ffffff;
+    }
+    .mobile-menu .mobile-login:hover {
+        justify-content: center;
+        padding-left: 8px;
+        background: rgba(22, 133, 255, 0.16);
+    }
+}
+
+@keyframes mobileMenuIn {
+    from {
+        opacity: 0;
+        transform: translateY(-12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 500px) {
+    .mobile-menu {
+        top: 68px;
+        padding: 12px 16px 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .mobile-menu {
+        animation: none;
+    }
+}

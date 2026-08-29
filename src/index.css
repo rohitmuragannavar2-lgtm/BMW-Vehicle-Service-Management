@@ -1,0 +1,242 @@
+@import "tailwindcss";
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #020304;
+    color: white;
+    font-family: "Inter", "Plus Jakarta Sans", "Public Sans";
+}
+
+
+/* ========================================
+   INTRO SCREEN
+======================================== */
+
+.intro-screen {
+    animation: introExit 1.2s ease-in-out 3.8s forwards;
+}
+
+@keyframes introExit {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+
+/* ========================================
+   HEADLIGHT
+======================================== */
+
+.headlight {
+    width: 130px;
+    height: 22px;
+    border-radius: 100%;
+    background: #f4fbff;
+    opacity: 0;
+    filter: blur(3px);
+    box-shadow: 0 0 10px #ffffff, 0 0 30px #a9dcff, 0 0 70px #328fff, 0 0 140px rgba(0, 100, 255, 0.5);
+    animation: headlightsOn 1.3s ease-out 0.9s forwards;
+}
+
+@keyframes headlightsOn {
+    0% {
+        opacity: 0;
+        transform: scaleX(0.05);
+    }
+    35% {
+        opacity: 1;
+        transform: scaleX(1.25);
+    }
+    65% {
+        opacity: 0.9;
+        transform: scaleX(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero-content {
+    opacity: 0;
+    transform: translateY(35px);
+    animation: heroReveal 1.3s ease-out 3.1s forwards;
+}
+
+@keyframes heroReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ========================================
+   NAVBAR
+======================================== */
+
+.navbar {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: navbarReveal 1s ease-out 4.2s forwards;
+}
+
+@keyframes navbarReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ========================================
+   NAV LINKS
+======================================== */
+
+.nav-link {
+    position: relative;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: white;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 0;
+    height: 1px;
+    background: #1685ff;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+
+/* ========================================
+   STATS
+======================================== */
+
+.stats {
+    opacity: 0;
+    animation: statsReveal 1s ease-out 4.7s forwards;
+}
+
+@keyframes statsReveal {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ========================================
+   SCROLL ANIMATION
+======================================== */
+
+.scroll-arrow {
+    animation: scrollMove 1.5s ease-in-out infinite;
+}
+
+@keyframes scrollMove {
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translateY(8px);
+        opacity: 1;
+    }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+    .headlight {
+        width: 80px;
+        height: 15px;
+    }
+}
+
+
+/* =====================================================
+   GLOBAL DESIGN SYSTEM
+===================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    font-family: "Inter", "Public Sans", "Plus Jakarta Sans", Arial, sans-serif;
+    background: #f5f6f7;
+    color: #171a1d;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    border: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+::selection {
+    background: #0879ca;
+    color: #ffffff;
+}

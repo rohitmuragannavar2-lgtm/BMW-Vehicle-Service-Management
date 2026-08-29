@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.intro {
+    height: 100vh;
+    background: #000;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* HEADLIGHTS */
+
+.headlights {
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 220px;
+}
+
+.light {
+    width: 120px;
+    height: 25px;
+    background: white;
+    border-radius: 50%;
+    filter: blur(4px);
+    opacity: 0;
+    animation: headlightsOn 1s forwards;
+    animation-delay: 0.8s;
+    box-shadow: 0 0 40px 15px rgba(150, 200, 255, 0.7);
+}
+
+@keyframes headlightsOn {
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* CAR */
+
+.car {
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 90px;
+    font-weight: bold;
+    letter-spacing: 15px;
+    opacity: 0;
+    animation: carReveal 1.5s forwards;
+    animation-delay: 1.8s;
+}
+
+@keyframes carReveal {
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* WELCOME TEXT */
+
+.welcome {
+    position: absolute;
+    left: 8%;
+    top: 40%;
+    opacity: 0;
+    animation: textReveal 1s forwards;
+    animation-delay: 2.8s;
+}
+
+.welcome p {
+    font-size: 20px;
+    letter-spacing: 8px;
+}
+
+.welcome h1 {
+    font-size: 80px;
+    letter-spacing: 10px;
+    margin: 10px 0;
+}
+
+.welcome span {
+    color: #aaa;
+    letter-spacing: 4px;
+}
+
+@keyframes textReveal {
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* NAVBAR */
+
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0;
+    animation: navReveal 1s forwards;
+    animation-delay: 4s;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.links {
+    display: flex;
+    gap: 30px;
+}
+
+.links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+@keyframes navReveal {
+    to {
+        opacity: 1;
+    }
+}

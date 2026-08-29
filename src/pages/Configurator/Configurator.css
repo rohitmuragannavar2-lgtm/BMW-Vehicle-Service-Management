@@ -1,0 +1,416 @@
+/* =========================================
+   CONFIGURATOR
+========================================= */
+
+.configurator {
+    min-height: 100vh;
+    padding: 125px 6% 80px;
+    color: #ffffff;
+    background: radial-gradient( circle at 65% 35%, rgba(30, 100, 170, 0.12), transparent 38%), linear-gradient( 135deg, #020406, #081119, #020406);
+}
+
+
+/* =========================================
+   BACK
+========================================= */
+
+.config-back {
+    padding: 8px 15px;
+    border: 1px solid rgba(80, 165, 235, 0.4);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.035);
+    color: rgba(255, 255, 255, 0.75);
+    cursor: pointer;
+    font-size: 8px;
+    letter-spacing: 0.15em;
+    transition: 0.25s ease;
+}
+
+.config-back:hover {
+    border-color: #55aaff;
+    color: #ffffff;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.config-header {
+    max-width: 1200px;
+    margin: 35px auto 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.config-header p {
+    margin: 0 0 12px;
+    color: #55aaff;
+    font-size: 8px;
+    letter-spacing: 0.35em;
+}
+
+.config-header h1 {
+    margin: 0;
+    font-size: clamp(45px, 6vw, 80px);
+    font-weight: 300;
+    letter-spacing: -0.05em;
+}
+
+.config-price {
+    text-align: right;
+}
+
+.config-price span {
+    display: block;
+    margin-bottom: 7px;
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 7px;
+    letter-spacing: 0.2em;
+}
+
+.config-price strong {
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 300;
+}
+
+
+/* =========================================
+   LAYOUT
+========================================= */
+
+.config-layout {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.35fr 0.65fr;
+    gap: 35px;
+    align-items: start;
+}
+
+
+/* =========================================
+   CAR PREVIEW
+========================================= */
+
+.config-preview {
+    position: relative;
+    height: 520px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 22px;
+    background: radial-gradient( circle at center, #17222b, #05080b 75%);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+}
+
+.config-preview img {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* =========================================
+   COLOUR GLOW
+========================================= */
+
+.config-color-glow {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.16;
+}
+
+
+/* =========================================
+   PREVIEW LABEL
+========================================= */
+
+.preview-label {
+    position: absolute;
+    left: 25px;
+    bottom: 22px;
+    z-index: 4;
+    padding: 8px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.35);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 7px;
+    letter-spacing: 0.2em;
+    backdrop-filter: blur(10px);
+}
+
+
+/* =========================================
+   OPTIONS
+========================================= */
+
+.config-options {
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.035);
+    backdrop-filter: blur(15px);
+}
+
+
+/* =========================================
+   OPTION SECTION
+========================================= */
+
+.config-section {
+    padding: 0 0 25px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.config-section-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.config-section-title span {
+    color: #55aaff;
+    font-size: 8px;
+}
+
+.config-section-title strong {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 8px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+}
+
+
+/* =========================================
+   COLORS
+========================================= */
+
+.color-options {
+    display: flex;
+    gap: 12px;
+}
+
+.color-option {
+    width: 38px;
+    height: 38px;
+    padding: 3px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.color-option span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.color-option:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.color-option.selected {
+    border: 2px solid #55aaff;
+    box-shadow: 0 0 12px rgba(85, 170, 255, 0.25);
+}
+
+.selected-name {
+    margin: 12px 0 0;
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 9px;
+}
+
+
+/* =========================================
+   OPTION LIST
+========================================= */
+
+.option-list {
+    display: grid;
+    gap: 7px;
+}
+
+.option-button {
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.025);
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    text-align: left;
+    font-size: 8px;
+    letter-spacing: 0.15em;
+    transition: 0.25s ease;
+}
+
+.option-button:hover {
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.option-button.active {
+    color: #ffffff;
+    border-color: #55aaff;
+    background: rgba(50, 140, 220, 0.10);
+}
+
+
+/* =========================================
+   SUMMARY
+========================================= */
+
+.config-summary {
+    display: grid;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.config-summary div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.config-summary span {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 7px;
+    letter-spacing: 0.15em;
+}
+
+.config-summary strong {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 8px;
+    font-weight: 400;
+}
+
+
+/* =========================================
+   SAVE
+========================================= */
+
+.save-config {
+    width: 100%;
+    height: 45px;
+    border: none;
+    background: #0875ff;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 8px;
+    letter-spacing: 0.15em;
+    transition: 0.25s ease;
+}
+
+.save-config:hover {
+    background: #1680ff;
+}
+
+.save-config span {
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   NOT FOUND
+========================================= */
+
+.configurator-not-found {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background: #030507;
+    color: #ffffff;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+    .config-layout {
+        grid-template-columns: 1fr;
+    }
+    .config-preview {
+        height: 400px;
+    }
+}
+
+@media (max-width: 600px) {
+    .configurator {
+        padding: 105px 5% 60px;
+    }
+    .config-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    .config-price {
+        text-align: left;
+    }
+    .config-preview {
+        height: 300px;
+    }
+}
+
+.config-car-image {
+    transition: filter 0.5s ease;
+}
+
+
+/* Selected wheel + interior on preview */
+
+.preview-options {
+    position: absolute;
+    right: 22px;
+    bottom: 22px;
+    z-index: 5;
+    display: flex;
+    gap: 7px;
+}
+
+.preview-options span {
+    padding: 7px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.35);
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 7px;
+    letter-spacing: 0.12em;
+    backdrop-filter: blur(10px);
+}
+
+
+/* Option button */
+
+.option-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.option-button b {
+    color: #55aaff;
+    font-size: 13px;
+    font-weight: 400;
+}

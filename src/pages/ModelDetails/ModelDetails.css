@@ -1,0 +1,599 @@
+/* =====================================================
+   BMW MODEL DETAILS
+===================================================== */
+
+.model-details {
+    min-height: 100vh;
+    padding: 125px 7% 70px;
+    color: #f4f7fa;
+    background: radial-gradient( circle at 78% 35%, rgba(35, 105, 175, 0.12), transparent 35%), linear-gradient( 135deg, #030507 0%, #071019 50%, #030507 100%);
+}
+
+
+/* =====================================================
+   BACK BUTTON
+===================================================== */
+
+.model-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 15px;
+    border: 1px solid rgba(80, 165, 235, 0.45);
+    border-radius: 20px;
+    background: rgba(8, 16, 25, 0.75);
+    color: rgba(255, 255, 255, 0.78);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 8px;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    backdrop-filter: blur(10px);
+    transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+.model-back:hover {
+    color: #ffffff;
+    background: rgba(20, 75, 120, 0.25);
+    border-color: rgba(90, 180, 255, 0.75);
+}
+
+.back-arrow {
+    color: #5aafff;
+    font-size: 14px;
+    line-height: 1;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.model-details-hero {
+    width: 100%;
+    max-width: 1150px;
+    margin: 35px auto 0;
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    align-items: center;
+    gap: 55px;
+}
+
+
+/* =====================================================
+   TEXT
+===================================================== */
+
+.model-details-text {
+    padding: 10px 0;
+}
+
+.model-details-category {
+    margin: 0 0 14px;
+    color: #55aaff;
+    font-size: 8px;
+    font-weight: 500;
+    letter-spacing: 0.35em;
+}
+
+.model-details-text h1 {
+    margin: 0;
+    color: #f5f7fa;
+    font-size: clamp(48px, 5vw, 78px);
+    line-height: 0.9;
+    font-weight: 300;
+    letter-spacing: -0.055em;
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.model-details-description {
+    max-width: 390px;
+    margin: 22px 0 0;
+    color: rgba(205, 216, 226, 0.55);
+    font-size: 12px;
+    line-height: 1.8;
+    font-weight: 300;
+}
+
+
+/* =====================================================
+   SHOWROOM PRICE
+===================================================== */
+
+.model-price {
+    margin-top: 28px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    max-width: 390px;
+}
+
+.model-price span {
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 7px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+}
+
+.model-price strong {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+}
+
+
+/* =====================================================
+   CAR IMAGE
+===================================================== */
+
+.model-details-image {
+    position: relative;
+    width: 100%;
+    height: 370px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.025);
+    box-shadow: 0 25px 55px rgba(0, 0, 0, 0.45);
+}
+
+.model-details-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.9) contrast(1.04);
+}
+
+
+/* =====================================================
+   IMAGE OVERLAY
+===================================================== */
+
+.model-details-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient( 90deg, rgba(3, 7, 10, 0.10), transparent 40%, rgba(3, 7, 10, 0.15));
+}
+
+
+/* =====================================================
+   SPECIFICATIONS
+===================================================== */
+
+.model-details-specs {
+    width: 100%;
+    max-width: 1150px;
+    margin: 25px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.035);
+    backdrop-filter: blur(14px);
+}
+
+.model-details-specs div {
+    padding: 20px 24px;
+    border-right: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.model-details-specs div:last-child {
+    border-right: none;
+}
+
+.model-details-specs span {
+    display: block;
+    margin-bottom: 8px;
+    color: rgba(205, 215, 225, 0.34);
+    font-size: 7px;
+    letter-spacing: 0.2em;
+}
+
+.model-details-specs strong {
+    color: #e9f0f5;
+    font-size: 17px;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+}
+
+
+/* =====================================================
+   NOT FOUND
+===================================================== */
+
+.model-not-found {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background: #030507;
+    color: #ffffff;
+}
+
+.model-not-found h1 {
+    font-size: 30px;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+}
+
+.model-not-found button {
+    padding: 11px 18px;
+    border: none;
+    background: #0875ff;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 8px;
+    letter-spacing: 0.15em;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+    .model-details {
+        padding: 110px 6% 60px;
+    }
+    .model-details-hero {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+    .model-details-image {
+        height: 350px;
+        order: -1;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+    .model-details {
+        padding: 100px 5% 50px;
+    }
+    .model-details-text h1 {
+        font-size: 52px;
+    }
+    .model-details-description {
+        font-size: 11px;
+    }
+    .model-price strong {
+        font-size: 21px;
+    }
+    .model-details-image {
+        height: 250px;
+    }
+    .model-details-specs {
+        grid-template-columns: 1fr;
+    }
+    .model-details-specs div {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    }
+    .model-details-specs div:last-child {
+        border-bottom: none;
+    }
+}
+
+
+/* =========================================================
+   BMW MODEL DETAILS — SHOWROOM POLISH
+========================================================= */
+
+
+/* ---------------------------------------------------------
+   PAGE ATMOSPHERE
+--------------------------------------------------------- */
+
+.model-details {
+    position: relative;
+    isolation: isolate;
+}
+
+.model-details::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: radial-gradient( circle at 70% 45%, rgba(20, 115, 205, 0.08), transparent 32%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+
+/* ---------------------------------------------------------
+   BACK BUTTON
+--------------------------------------------------------- */
+
+.model-back {
+    transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.model-back:hover {
+    transform: translateX(-4px);
+    background: rgba(20, 75, 120, 0.28);
+    border-color: rgba(90, 180, 255, 0.8);
+}
+
+
+/* ---------------------------------------------------------
+   MODEL CATEGORY
+--------------------------------------------------------- */
+
+.model-details-category {
+    position: relative;
+    display: inline-block;
+}
+
+.model-details-category::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 1px;
+    margin-top: 9px;
+    background: #55aaff;
+    box-shadow: 0 0 12px rgba(85, 170, 255, 0.5);
+}
+
+
+/* ---------------------------------------------------------
+   MODEL TITLE
+--------------------------------------------------------- */
+
+.model-details-text h1 {
+    text-shadow: 0 8px 35px rgba(0, 0, 0, 0.35);
+    animation: modelTitleReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes modelTitleReveal {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ---------------------------------------------------------
+   DESCRIPTION
+--------------------------------------------------------- */
+
+.model-details-description {
+    animation: modelDescriptionReveal 0.9s 0.12s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes modelDescriptionReveal {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ---------------------------------------------------------
+   PRICE
+--------------------------------------------------------- */
+
+.model-price {
+    transition: border-color 0.35s ease;
+}
+
+.model-price:hover {
+    border-color: rgba(85, 170, 255, 0.35);
+}
+
+.model-price strong {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.model-price:hover strong {
+    color: #65b5ff;
+    transform: translateX(3px);
+}
+
+
+/* ---------------------------------------------------------
+   CAR SHOWCASE
+--------------------------------------------------------- */
+
+.model-details-image {
+    isolation: isolate;
+    transition: border-color 0.45s ease, box-shadow 0.45s ease, transform 0.45s ease;
+}
+
+.model-details-image:hover {
+    border-color: rgba(85, 170, 255, 0.25);
+    transform: translateY(-4px);
+    box-shadow: 0 32px 70px rgba(0, 0, 0, 0.52), 0 0 45px rgba(20, 115, 205, 0.06);
+}
+
+
+/* ---------------------------------------------------------
+   CAR IMAGE
+--------------------------------------------------------- */
+
+.model-details-image img {
+    transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1), filter 0.7s ease;
+}
+
+.model-details-image:hover img {
+    transform: scale(1.035);
+    filter: brightness(0.94) contrast(1.06);
+}
+
+
+/* ---------------------------------------------------------
+   IMAGE LIGHT SWEEP
+--------------------------------------------------------- */
+
+.model-details-image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 45%;
+    height: 100%;
+    background: linear-gradient( 90deg, transparent, rgba(255, 255, 255, 0.055), transparent);
+    transform: skewX(-18deg);
+    transition: left 0.9s ease;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.model-details-image:hover::before {
+    left: 150%;
+}
+
+
+/* ---------------------------------------------------------
+   IMAGE OVERLAY
+--------------------------------------------------------- */
+
+.model-details-image::after {
+    transition: opacity 0.5s ease;
+}
+
+.model-details-image:hover::after {
+    opacity: 0.7;
+}
+
+
+/* ---------------------------------------------------------
+   SPECIFICATION PANEL
+--------------------------------------------------------- */
+
+.model-details-specs {
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.model-details-specs:hover {
+    border-color: rgba(85, 170, 255, 0.18);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.22);
+}
+
+
+/* ---------------------------------------------------------
+   INDIVIDUAL SPECS
+--------------------------------------------------------- */
+
+.model-details-specs div {
+    position: relative;
+    transition: background 0.3s ease;
+}
+
+.model-details-specs div:hover {
+    background: rgba(255, 255, 255, 0.025);
+}
+
+.model-details-specs strong {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.model-details-specs div:hover strong {
+    color: #65b5ff;
+    transform: translateX(3px);
+}
+
+
+/* ---------------------------------------------------------
+   SPEC BLUE INDICATOR
+--------------------------------------------------------- */
+
+.model-details-specs div::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background: #55aaff;
+    box-shadow: 0 0 10px rgba(85, 170, 255, 0.4);
+    transition: width 0.35s ease;
+}
+
+.model-details-specs div:hover::before {
+    width: 35px;
+}
+
+
+/* ---------------------------------------------------------
+   NOT FOUND
+--------------------------------------------------------- */
+
+.model-not-found button {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.model-not-found button:hover {
+    background: #1685ff;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(8, 117, 255, 0.25);
+}
+
+
+/* ---------------------------------------------------------
+   FOCUS
+--------------------------------------------------------- */
+
+.model-back:focus-visible,
+.model-not-found button:focus-visible {
+    outline: 2px solid #55aaff;
+    outline-offset: 4px;
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+--------------------------------------------------------- */
+
+@media (max-width: 900px) {
+    .model-details-image:hover {
+        transform: translateY(-2px);
+    }
+    .model-details-image:hover img {
+        transform: scale(1.02);
+    }
+}
+
+
+/* ---------------------------------------------------------
+   REDUCED MOTION
+--------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+    .model-details-text h1,
+    .model-details-description {
+        animation: none !important;
+    }
+    .model-details-image,
+    .model-details-image img,
+    .model-details-specs,
+    .model-price {
+        transition: none !important;
+    }
+    .model-details-image:hover {
+        transform: none;
+    }
+}

@@ -1,0 +1,894 @@
+/* =========================================================
+   BMW VEHICLE DETAILS
+   PREMIUM WHITE EDITION
+========================================================= */
+
+.vehicle-details-page {
+    min-height: 100vh;
+    background: #ffffff;
+    color: #171a1d;
+    font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    animation: detailsPageIn 0.7s ease both;
+}
+
+
+/* =========================================================
+   PAGE ANIMATION
+========================================================= */
+
+@keyframes detailsPageIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes detailsReveal {
+    from {
+        opacity: 0;
+        transform: translateY(22px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.vehicle-details-header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    min-height: 96px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    padding: 0 60px;
+    background: rgba(255, 255, 255, 0.97);
+    border-bottom: 1px solid #e3e6e8;
+    box-shadow: 0 5px 22px rgba(20, 30, 38, 0.035);
+    backdrop-filter: blur(14px);
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.back-button {
+    height: 45px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 17px;
+    border: 1px solid #d9dee2;
+    border-radius: 5px;
+    background: #ffffff;
+    color: #30363b;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.back-button:hover {
+    background: #151a1e;
+    color: #ffffff;
+    border-color: #151a1e;
+    transform: translateX(-4px);
+    box-shadow: 0 9px 22px rgba(0, 0, 0, 0.09);
+}
+
+.back-button:active {
+    transform: translateX(-2px) scale(0.98);
+}
+
+
+/* =========================================================
+   HEADER TITLE
+========================================================= */
+
+.details-header-title {
+    min-height: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 32px;
+    border-left: 1px solid #e0e4e7;
+}
+
+.details-header-title span {
+    display: block;
+    margin-bottom: 7px;
+    color: #0879ca;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.21em;
+    text-transform: uppercase;
+}
+
+.details-header-title h1 {
+    margin: 0;
+    color: #20252a;
+    font-size: 28px;
+    line-height: 1;
+    font-weight: 500;
+    letter-spacing: -0.045em;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.vehicle-details-content {
+    width: min(1450px, calc(100% - 80px));
+    margin: 0 auto;
+    padding: 48px 0 90px;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.details-hero {
+    position: relative;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid #dfe3e6;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 12px 38px rgba(20, 30, 38, 0.045);
+    animation: detailsReveal 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.08s both;
+}
+
+.details-hero::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: #0879ca;
+    opacity: 0.85;
+    z-index: 8;
+}
+
+
+/* =========================================================
+   HERO TEXT
+========================================================= */
+
+.details-hero-text {
+    position: relative;
+    z-index: 10;
+    width: 47%;
+    padding-left: 55px;
+}
+
+.details-hero-text>p {
+    margin: 0 0 16px;
+    color: #0879ca;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+}
+
+.details-hero-text h2 {
+    margin: 0;
+    color: #181d21;
+    font-size: clamp(45px, 5vw, 64px);
+    line-height: 1.02;
+    font-weight: 450;
+    letter-spacing: -0.06em;
+    white-space: nowrap;
+}
+
+.details-hero-text>span {
+    display: block;
+    margin-top: 14px;
+    color: #757d84;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+}
+
+
+/* =========================================================
+   REGISTRATION
+========================================================= */
+
+.details-registration {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-top: 30px;
+    padding-left: 15px;
+    border-left: 2px solid #0879ca;
+}
+
+.details-registration small {
+    color: #92999f;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.details-registration strong {
+    color: #30363b;
+    font-size: 16px;
+    font-weight: 650;
+    letter-spacing: 0.02em;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.vehicle-status {
+    width: fit-content;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 23px;
+    padding: 9px 14px;
+    border: 1px solid #cce8d9;
+    border-radius: 30px;
+    background: #edf8f2;
+    color: #248552;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+}
+
+
+/* =========================================================
+   CAR IMAGE
+========================================================= */
+
+.details-car-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 62%;
+    height: 100%;
+    animation: carDetailsReveal 1.25s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+}
+
+@keyframes carDetailsReveal {
+    from {
+        opacity: 0;
+        transform: translateX(50px) scale(1.02);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+.details-car-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient( 90deg, #ffffff 0%, rgba(255, 255, 255, 0.96) 7%, rgba(255, 255, 255, 0.65) 17%, rgba(255, 255, 255, 0) 38%);
+    pointer-events: none;
+}
+
+.details-car-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 1.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.details-hero:hover .details-car-image img {
+    transform: scale(1.035);
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.owner-information,
+.specifications,
+.vehicle-care,
+.vehicle-documents {
+    margin-top: 52px;
+    animation: detailsReveal 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.owner-information {
+    animation-delay: 0.12s;
+}
+
+.specifications {
+    animation-delay: 0.18s;
+}
+
+.vehicle-care {
+    animation-delay: 0.24s;
+}
+
+.vehicle-documents {
+    animation-delay: 0.3s;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.details-section-heading {
+    position: relative;
+    margin-bottom: 20px;
+    padding-left: 15px;
+}
+
+.details-section-heading::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 3px;
+    width: 2px;
+    height: 34px;
+    background: #0879ca;
+}
+
+.details-section-heading span {
+    display: block;
+    margin-bottom: 8px;
+    color: #0879ca;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.21em;
+    text-transform: uppercase;
+}
+
+.details-section-heading h2 {
+    margin: 0;
+    color: #20252a;
+    font-size: 29px;
+    font-weight: 450;
+    letter-spacing: -0.045em;
+}
+
+
+/* =========================================================
+   OWNER
+========================================================= */
+
+.owner-name-card {
+    min-height: 105px;
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    padding: 23px;
+    border: 1px solid #e0e4e7;
+    border-radius: 9px;
+    background: #ffffff;
+    box-shadow: 0 6px 22px rgba(20, 30, 38, 0.025);
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.owner-name-card:hover {
+    transform: translateY(-4px);
+    border-color: #d0dce2;
+    box-shadow: 0 15px 32px rgba(20, 30, 38, 0.06);
+}
+
+.owner-avatar {
+    width: 54px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid #d4e8f4;
+    border-radius: 50%;
+    background: #edf6fd;
+    color: #0879ca;
+    font-size: 19px;
+    font-weight: 700;
+    transition: transform 0.35s ease;
+}
+
+.owner-name-card:hover .owner-avatar {
+    transform: scale(1.07) rotate(-3deg);
+}
+
+.owner-name-card div:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.owner-name-card small {
+    color: #92999f;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.owner-name-card strong {
+    color: #292f34;
+    font-size: 17px;
+    font-weight: 650;
+}
+
+
+/* =========================================================
+   SPECIFICATIONS
+========================================================= */
+
+.specifications-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.spec-card {
+    min-height: 125px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    padding: 23px;
+    overflow: hidden;
+    border: 1px solid #e0e4e7;
+    border-radius: 9px;
+    background: #ffffff;
+    box-shadow: 0 5px 18px rgba(20, 30, 38, 0.02);
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.spec-card::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #0879ca;
+    transition: width 0.4s ease;
+}
+
+.spec-card:hover {
+    transform: translateY(-5px);
+    border-color: #d0dce2;
+    box-shadow: 0 15px 32px rgba(20, 30, 38, 0.055);
+}
+
+.spec-card:hover::after {
+    width: 100%;
+}
+
+.spec-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid #d7e9f5;
+    border-radius: 8px;
+    background: #edf6fd;
+    color: #147bc7;
+    transition: transform 0.35s ease;
+}
+
+.spec-card:hover .spec-icon {
+    transform: scale(1.07) rotate(-3deg);
+}
+
+.spec-card div:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    min-width: 0;
+}
+
+.spec-card small {
+    color: #8d959b;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+}
+
+.spec-card strong {
+    color: #292f34;
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 650;
+}
+
+
+/* =========================================================
+   CARE
+========================================================= */
+
+.care-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.care-card {
+    min-height: 145px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 25px;
+    border: 1px solid #e0e4e7;
+    border-radius: 9px;
+    background: #ffffff;
+    box-shadow: 0 5px 18px rgba(20, 30, 38, 0.02);
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.care-card:hover {
+    transform: translateY(-5px);
+    border-color: #d0dce2;
+    box-shadow: 0 15px 32px rgba(20, 30, 38, 0.055);
+}
+
+.care-icon {
+    width: 53px;
+    height: 53px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 8px;
+    transition: transform 0.35s ease;
+}
+
+.care-card:hover .care-icon {
+    transform: scale(1.07) rotate(-3deg);
+}
+
+.care-icon.blue {
+    background: #edf6fd;
+    color: #147bc7;
+}
+
+.care-icon.green {
+    background: #edf8f2;
+    color: #248552;
+}
+
+.care-card div:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.care-card small {
+    color: #8e969c;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.care-card h3 {
+    margin: 0;
+    color: #292f34;
+    font-size: 17px;
+    font-weight: 650;
+}
+
+.care-card p {
+    margin: 0;
+    color: #92999f;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   DOCUMENTS
+========================================================= */
+
+.documents-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.details-document {
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px;
+    border: 1px solid #e0e4e7;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #147bc7;
+    cursor: pointer;
+    box-shadow: 0 5px 16px rgba(20, 30, 38, 0.018);
+    transition: transform 0.35s ease, background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.details-document:hover {
+    background: #fbfdff;
+    border-color: #d1dfe6;
+    transform: translateX(5px);
+    box-shadow: 0 10px 24px rgba(20, 30, 38, 0.045);
+}
+
+.details-document div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 0;
+}
+
+.details-document strong {
+    color: #30363b;
+    font-size: 13px;
+    font-weight: 650;
+}
+
+.details-document span {
+    color: #959ca2;
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   FOCUS
+========================================================= */
+
+button:focus-visible {
+    outline: 2px solid #0879ca;
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+    .vehicle-details-content {
+        width: calc(100% - 60px);
+    }
+    .vehicle-details-header {
+        padding: 0 35px;
+    }
+    .details-hero-text {
+        padding-left: 40px;
+    }
+    .details-hero-text h2 {
+        font-size: 45px;
+    }
+    .specifications-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+    .vehicle-details-header {
+        min-height: auto;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+        padding: 23px 20px;
+    }
+    .back-button {
+        width: 100%;
+    }
+    .details-header-title {
+        width: 100%;
+        min-height: auto;
+        padding: 18px 0 0;
+        border-left: none;
+        border-top: 1px solid #e0e4e7;
+    }
+    .vehicle-details-content {
+        width: calc(100% - 30px);
+        padding: 30px 0 65px;
+    }
+    .details-hero {
+        min-height: 610px;
+        display: block;
+    }
+    .details-hero-text {
+        width: 100%;
+        padding: 34px 30px;
+    }
+    .details-hero-text h2 {
+        font-size: 39px;
+        white-space: normal;
+    }
+    .details-car-image {
+        top: auto;
+        bottom: 0;
+        width: 100%;
+        height: 52%;
+    }
+    .details-car-image::after {
+        background: linear-gradient( 180deg, #ffffff 0%, rgba(255, 255, 255, 0.7) 10%, rgba(255, 255, 255, 0) 42%);
+    }
+    .specifications-grid,
+    .care-grid,
+    .documents-list {
+        grid-template-columns: 1fr;
+    }
+    .owner-information,
+    .specifications,
+    .vehicle-care,
+    .vehicle-documents {
+        margin-top: 40px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 500px) {
+    .vehicle-details-content {
+        width: calc(100% - 22px);
+    }
+    .details-hero {
+        min-height: 575px;
+    }
+    .details-hero-text {
+        padding: 28px 24px;
+    }
+    .details-hero-text h2 {
+        font-size: 33px;
+    }
+    .details-section-heading h2 {
+        font-size: 24px;
+    }
+    .owner-name-card,
+    .spec-card,
+    .care-card {
+        padding: 19px;
+    }
+    .details-document {
+        padding: 16px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .vehicle-details-page,
+    .details-hero,
+    .details-car-image,
+    .owner-information,
+    .specifications,
+    .vehicle-care,
+    .vehicle-documents {
+        animation: none !important;
+    }
+    * {
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+/* =========================================================
+   VEHICLE DETAILS — FINAL REFINEMENT
+========================================================= */
+
+
+/* 1. Premium hero atmosphere */
+
+.details-hero {
+    isolation: isolate;
+}
+
+.details-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient( circle at 72% 48%, rgba(8, 121, 202, 0.055), transparent 35%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.details-hero-text {
+    z-index: 10;
+}
+
+
+/* 2. Make the registration feel like a real vehicle ID */
+
+.details-registration {
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.details-registration:hover {
+    transform: translateX(4px);
+    border-color: #075f9c;
+}
+
+
+/* 3. Document cards get a cleaner interaction */
+
+.details-document {
+    position: relative;
+    overflow: hidden;
+}
+
+.details-document::after {
+    content: "";
+    position: absolute;
+    left: -100%;
+    top: 0;
+    width: 65%;
+    height: 100%;
+    background: linear-gradient( 90deg, transparent, rgba(8, 121, 202, 0.045), transparent);
+    transform: skewX(-20deg);
+    transition: left 0.55s ease;
+    pointer-events: none;
+}
+
+.details-document:hover::after {
+    left: 140%;
+}
+
+
+/* 4. Better keyboard focus */
+
+.back-button:focus-visible,
+.details-document:focus-visible {
+    outline: 2px solid #0879ca;
+    outline-offset: 3px;
+}
+
+
+/* Keep mobile clean */
+
+@media (max-width: 800px) {
+    .details-hero::after {
+        background: radial-gradient( circle at 50% 72%, rgba(8, 121, 202, 0.045), transparent 40%);
+    }
+}
+
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+    .details-registration,
+    .details-document::after {
+        transition: none !important;
+    }
+}
