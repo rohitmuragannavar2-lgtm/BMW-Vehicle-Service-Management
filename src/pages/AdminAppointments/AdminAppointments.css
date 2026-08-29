@@ -1590,3 +1590,39 @@
         transition: none !important;
     }
 }
+
+
+/* =====================================================
+   TABLET + MOBILE — COMPACT BACK BUTTON
+===================================================== */
+
+@media (max-width: 900px) {
+    .appointments-back-button,
+    .model-back,
+    .service-back-button,
+    .request-back-button,
+    .vehicle-back-button,
+    .admin-back-button {
+        height: 34px;
+        padding: 0 11px;
+        gap: 6px;
+        font-size: 8px;
+        letter-spacing: 0.08em;
+        border-radius: 3px;
+    }
+}
+
+@media (max-width: 600px) {
+    .appointments-back-button,
+    .model-back,
+    .service-back-button,
+    .request-back-button,
+    .vehicle-back-button,
+    .admin-back-button {
+        height: 32px;
+        padding: 0 9px;
+        gap: 5px;
+        font-size: 7px;
+        letter-spacing: 0.07em;
+    }
+}
