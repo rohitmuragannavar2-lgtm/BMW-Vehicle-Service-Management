@@ -1,15 +1,28 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { User, Menu, ArrowUpRight, X } from "lucide-react";
+import {
+  User,
+  Menu,
+  ArrowUpRight,
+  X,
+} from "lucide-react";
 import gsap from "gsap";
 import "./Navbar.css";
 
+
 function Navbar() {
+
   const navigate = useNavigate();
 
   const [menuOpen, setMenuOpen] = useState(false);
 
+
+  /* =====================================================
+     NAVBAR ANIMATION
+  ===================================================== */
+
   useEffect(() => {
+
     const tl = gsap.timeline();
 
     tl.fromTo(
@@ -78,29 +91,103 @@ function Navbar() {
     return () => {
       tl.kill();
     };
+
   }, []);
+
+
+  /* =====================================================
+     CLOSE MOBILE MENU
+  ===================================================== */
 
   const closeMenu = () => {
     setMenuOpen(false);
   };
 
+
+  /* =====================================================
+     SERVICES
+  ===================================================== */
+
   const handleServices = () => {
+
     closeMenu();
 
-    const loggedIn = localStorage.getItem("bmwLoggedIn");
+    const loggedIn =
+      localStorage.getItem("bmwLoggedIn");
 
     if (loggedIn === "true") {
+
       navigate("/service-request");
+
     } else {
+
       navigate("/login");
+
     }
+
   };
 
+
+  /* =====================================================
+     DISCOVER
+  ===================================================== */
+
+  const handleDiscover = (event) => {
+
+    event.preventDefault();
+
+    closeMenu();
+
+    if (window.location.pathname === "/") {
+
+      const about =
+        document.getElementById("about");
+
+      if (about) {
+
+        about.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+
+      }
+
+    } else {
+
+      navigate("/");
+
+      setTimeout(() => {
+
+        const about =
+          document.getElementById("about");
+
+        if (about) {
+
+          about.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+
+        }
+
+      }, 300);
+
+    }
+
+  };
+
+
+  /* =====================================================
+     RENDER
+  ===================================================== */
+
   return (
+
     <nav className="navbar">
 
+
       {/* =================================================
-          LEFT — LOGO
+          LOGO
       ================================================= */}
 
       <div className="nav-brand">
@@ -122,10 +209,13 @@ function Navbar() {
 
 
       {/* =================================================
-          CENTER — DESKTOP LINKS
+          DESKTOP NAVIGATION
       ================================================= */}
 
       <div className="nav-links">
+
+
+        {/* HOME */}
 
         <Link
           to="/"
@@ -134,12 +224,18 @@ function Navbar() {
           HOME
         </Link>
 
+
+        {/* MODELS */}
+
         <Link
           to="/models"
           className="nav-item"
         >
           MODELS
         </Link>
+
+
+        {/* SERVICES */}
 
         <button
           className="nav-item nav-service-button"
@@ -148,16 +244,26 @@ function Navbar() {
           SERVICES
         </button>
 
-        <a
-          href="#innovation"
+
+        {/* =================================================
+            INNOVATION
+            THIS OPENS THE SEPARATE DASHBOARD
+        ================================================= */}
+
+        <Link
+          to="/innovation"
           className="nav-item"
         >
           INNOVATION
-        </a>
+        </Link>
+
+
+        {/* DISCOVER */}
 
         <a
           href="#about"
           className="nav-item"
+          onClick={handleDiscover}
         >
           DISCOVER
         </a>
@@ -166,10 +272,11 @@ function Navbar() {
 
 
       {/* =================================================
-          RIGHT — DESKTOP ACTIONS
+          RIGHT ACTIONS
       ================================================= */}
 
       <div className="nav-actions">
+
 
         {/* LOGIN */}
 
@@ -177,6 +284,7 @@ function Navbar() {
           className="login-button"
           onClick={() => navigate("/login")}
         >
+
           <User
             size={16}
             strokeWidth={1.5}
@@ -185,12 +293,16 @@ function Navbar() {
           <span>
             LOGIN
           </span>
+
         </button>
 
 
         {/* REGISTER */}
 
-        <button className="register-button">
+        <button
+          className="register-button"
+          onClick={() => navigate("/login")}
+        >
 
           <span>
             REGISTER
@@ -204,11 +316,13 @@ function Navbar() {
         </button>
 
 
-        {/* MOBILE MENU BUTTON */}
+        {/* MOBILE MENU */}
 
         <button
           className="menu-button"
-          onClick={() => setMenuOpen(!menuOpen)}
+          onClick={() =>
+            setMenuOpen(!menuOpen)
+          }
           aria-label={
             menuOpen
               ? "Close navigation menu"
@@ -218,9 +332,19 @@ function Navbar() {
         >
 
           {menuOpen ? (
-            <X size={22} strokeWidth={1.5} />
+
+            <X
+              size={22}
+              strokeWidth={1.5}
+            />
+
           ) : (
-            <Menu size={22} strokeWidth={1.5} />
+
+            <Menu
+              size={22}
+              strokeWidth={1.5}
+            />
+
           )}
 
         </button>
@@ -236,73 +360,90 @@ function Navbar() {
 
         <div className="mobile-menu">
 
+
+          {/* HOME */}
+
           <Link
             to="/"
             onClick={closeMenu}
           >
-         
             HOME
           </Link>
 
+
+          {/* MODELS */}
 
           <Link
             to="/models"
             onClick={closeMenu}
           >
-          
             MODELS
           </Link>
 
 
+          {/* SERVICES */}
+
           <button
             onClick={handleServices}
           >
-          
             SERVICES
           </button>
 
 
-          <a
-            href="#innovation"
+          {/* =================================================
+              MOBILE INNOVATION
+          ================================================= */}
+
+          <Link
+            to="/innovation"
             onClick={closeMenu}
           >
-          
             INNOVATION
-          </a>
+          </Link>
 
+
+          {/* DISCOVER */}
 
           <a
             href="#about"
-            onClick={closeMenu}
+            onClick={handleDiscover}
           >
-           
             DISCOVER
           </a>
 
 
-          {/* MOBILE LOGIN */}
+          {/* LOGIN */}
 
           <button
             className="mobile-login"
             onClick={() => {
+
               closeMenu();
+
               navigate("/login");
+
             }}
           >
+
             <User
               size={15}
               strokeWidth={1.5}
             />
 
             LOGIN
+
           </button>
+
 
         </div>
 
       )}
 
     </nav>
+
   );
+
 }
+
 
 export default Navbar;

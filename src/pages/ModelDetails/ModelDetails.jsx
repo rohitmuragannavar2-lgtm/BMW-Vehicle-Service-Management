@@ -172,7 +172,7 @@ function ModelDetails() {
 
         <button
           onClick={() =>
-            navigate("/models")
+          navigate(-1)
           }
         >
           BACK TO MODELS
@@ -193,22 +193,18 @@ function ModelDetails() {
           BACK BUTTON
       ===================================== */}
 
-      <button
-        className="model-back"
-        onClick={() =>
-          navigate("/models")
-        }
-      >
+    <button
+  className="model-back"
+  onClick={() => navigate(-1)}
+>
+  <span className="back-arrow">
+    ←
+  </span>
 
-        <span className="back-arrow">
-          ←
-        </span>
-
-        <span>
-          BACK
-        </span>
-
-      </button>
+  <span>
+    BACK
+  </span>
+</button>
 
 
       {/* =====================================

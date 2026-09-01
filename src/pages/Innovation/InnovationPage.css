@@ -1,0 +1,913 @@
+/* =========================================================
+   BMW INNOVATION PAGE
+========================================================= */
+
+.innovation-page {
+    width: 100%;
+    min-height: 100vh;
+    background: #ffffff;
+    color: #111111;
+    overflow-x: hidden;
+    overflow-y: visible;
+    padding-top: 82px;
+    box-sizing: border-box;
+}
+
+.innovation-page *,
+.innovation-page *::before,
+.innovation-page *::after {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   BACK TO HOME
+========================================================= */
+
+.innovation-back-button {
+    position: relative;
+    z-index: 20;
+    margin: 24px 5.5% 0;
+    padding: 10px 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #d9dee3;
+    border-radius: 4px;
+    background: #ffffff;
+    color: #111111;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.innovation-back-button span {
+    font-size: 18px;
+    line-height: 1;
+    transition: transform 0.3s ease;
+}
+
+.innovation-back-button:hover {
+    color: #ffffff;
+    background: #0877c9;
+    border-color: #0877c9;
+    transform: translateX(3px);
+    box-shadow: 0 10px 25px rgba(8, 119, 201, 0.18);
+}
+
+.innovation-back-button:hover span {
+    transform: translateX(-4px);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.innovation-hero {
+    width: 100%;
+    min-height: 530px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 65px 5.5% 55px;
+    overflow: hidden;
+    background: radial-gradient( circle at 78% 45%, rgba(8, 119, 201, 0.055), transparent 36%);
+}
+
+
+/* =========================================================
+   HERO TEXT
+========================================================= */
+
+.innovation-hero-text {
+    width: 45%;
+    position: relative;
+    z-index: 5;
+}
+
+
+/* =========================================================
+   SMALL TITLE
+========================================================= */
+
+.innovation-small-title {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 21px;
+}
+
+.innovation-small-title span {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    color: #0877c9;
+}
+
+.innovation-small-title i {
+    width: 44px;
+    height: 2px;
+    display: block;
+    position: relative;
+    background: #0877c9;
+}
+
+.innovation-small-title i::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 12px;
+    height: 2px;
+    background: #111111;
+}
+
+
+/* =========================================================
+   HERO HEADING
+========================================================= */
+
+.innovation-hero h1 {
+    margin: 0;
+    max-width: 700px;
+    font-size: clamp(45px, 5vw, 76px);
+    line-height: 1.02;
+    font-weight: 500;
+    letter-spacing: -0.055em;
+    color: #111111;
+}
+
+.innovation-hero h1 span {
+    color: #111111;
+}
+
+
+/* =========================================================
+   HERO DESCRIPTION
+========================================================= */
+
+.innovation-hero-text>p {
+    max-width: 530px;
+    margin: 27px 0 30px;
+    font-size: 17px;
+    line-height: 1.7;
+    color: #5b5b5b;
+}
+
+
+/* =========================================================
+   HERO BUTTON
+========================================================= */
+
+.innovation-primary-btn {
+    border: none;
+    border-radius: 2px;
+    background: #0877c9;
+    color: #ffffff;
+    padding: 15px 21px;
+    display: inline-flex;
+    align-items: center;
+    gap: 24px;
+    position: relative;
+    overflow: hidden;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.35s ease, background 0.35s ease, box-shadow 0.35s ease;
+}
+
+.innovation-primary-btn::before {
+    content: "";
+    position: absolute;
+    left: -120%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient( 110deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.7s ease;
+}
+
+.innovation-primary-btn:hover::before {
+    left: 120%;
+}
+
+.innovation-primary-btn:hover {
+    background: #006bb7;
+    transform: translateY(-3px);
+    box-shadow: 0 14px 32px rgba(8, 119, 201, 0.23);
+}
+
+.innovation-primary-btn span {
+    font-size: 20px;
+    transition: transform 0.35s ease;
+}
+
+.innovation-primary-btn:hover span {
+    transform: translateX(6px);
+}
+
+
+/* =========================================================
+   HERO IMAGE
+========================================================= */
+
+.innovation-hero-image {
+    position: absolute;
+    right: -1%;
+    top: 0;
+    width: 62%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.innovation-hero-image::before {
+    content: "";
+    position: absolute;
+    left: -130px;
+    top: 0;
+    width: 330px;
+    height: 100%;
+    background: linear-gradient( to right, #ffffff 5%, rgba(255, 255, 255, 0.92) 22%, rgba(255, 255, 255, 0) 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.innovation-hero-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1.02);
+    transition: transform 1.4s cubic-bezier( 0.16, 1, 0.3, 1);
+}
+
+.innovation-hero:hover .innovation-hero-image img {
+    transform: scale(1.055);
+}
+
+
+/* =========================================================
+   CARDS SECTION
+========================================================= */
+
+.innovation-cards {
+    width: 100%;
+    padding: 24px 4% 50px;
+    display: grid;
+    /* 4 CARDS PER ROW */
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.innovation-card {
+    min-width: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 455px;
+    overflow: hidden;
+    /* LITTLE CURVED EDGES */
+    border-radius: 12px;
+    border: 1px solid #dfe4e8;
+    background: #ffffff;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.035);
+    transform: translateY(0);
+    transition: transform 0.4s cubic-bezier( 0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+
+/* BLUE LIGHT EFFECT */
+
+.innovation-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background: linear-gradient( 145deg, rgba(8, 119, 201, 0.055), transparent 35%);
+    opacity: 0;
+    transition: opacity 0.45s ease;
+}
+
+
+/* BOTTOM BLUE LINE */
+
+.innovation-card::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    z-index: 5;
+    background: #0877c9;
+    transition: width 0.5s cubic-bezier( 0.16, 1, 0.3, 1);
+}
+
+
+/* CARD HOVER */
+
+.innovation-card:hover {
+    transform: translateY(-8px);
+    border-color: #cbd5dd;
+    box-shadow: 0 22px 48px rgba(0, 0, 0, 0.10);
+}
+
+.innovation-card:hover::before {
+    opacity: 1;
+}
+
+.innovation-card:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   CARD IMAGE
+========================================================= */
+
+.innovation-card-image {
+    width: 100%;
+    height: 190px;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+    background: #f1f3f5;
+}
+
+
+/* IMAGE DARK GRADIENT */
+
+.innovation-card-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient( to top, rgba(0, 0, 0, 0.16), transparent 60%);
+    pointer-events: none;
+}
+
+
+/* IMAGE */
+
+.innovation-card-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1);
+    transition: transform 0.85s cubic-bezier( 0.16, 1, 0.3, 1);
+}
+
+.innovation-card:hover .innovation-card-image img {
+    transform: scale(1.08);
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.innovation-card-content {
+    width: 100%;
+    flex: 1;
+    min-height: 265px;
+    padding: 23px;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    position: relative;
+    z-index: 3;
+}
+
+
+/* =========================================================
+   CARD ICON
+========================================================= */
+
+.innovation-icon {
+    width: 39px;
+    height: 39px;
+    flex-shrink: 0;
+    margin-bottom: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(8, 119, 201, 0.28);
+    border-radius: 50%;
+    background: rgba(8, 119, 201, 0.035);
+    color: #0877c9;
+    font-size: 20px;
+    transition: transform 0.4s ease, background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.innovation-card:hover .innovation-icon {
+    transform: scale(1.08) rotate(7deg);
+    background: rgba(8, 119, 201, 0.09);
+    border-color: rgba(8, 119, 201, 0.5);
+    box-shadow: 0 6px 18px rgba(8, 119, 201, 0.11);
+}
+
+
+/* =========================================================
+   CARD TITLE
+========================================================= */
+
+.innovation-card h2 {
+    margin: 0 0 13px;
+    min-height: 50px;
+    font-size: 20px;
+    line-height: 1.25;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    color: #161616;
+}
+
+
+/* =========================================================
+   CARD DESCRIPTION
+========================================================= */
+
+.innovation-card p {
+    margin: 0;
+    min-height: 76px;
+    font-size: 14px;
+    line-height: 1.65;
+    color: #62676c;
+}
+
+
+/* =========================================================
+   CARD BUTTON
+   IMPORTANT:
+   ONLY ONE BUTTON STYLE
+========================================================= */
+
+.innovation-card button {
+    width: 100%;
+    margin-top: auto;
+    padding: 20px 0 0;
+    border: none;
+    background: transparent;
+    color: #0877c9;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-align: left;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+
+/* BUTTON TEXT */
+
+.innovation-card button>span:first-child {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* BUTTON HOVER */
+
+.innovation-card button:hover {
+    color: #005b9f;
+}
+
+
+/* =========================================================
+   CARD ARROW CIRCLE
+========================================================= */
+
+.innovation-card button>span:last-child {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(8, 119, 201, 0.28);
+    border-radius: 50%;
+    background: #ffffff;
+    font-size: 16px;
+    line-height: 1;
+    transition: transform 0.35s ease, background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.innovation-card:hover .innovation-card button>span:last-child {
+    transform: translateX(5px);
+    background: rgba(8, 119, 201, 0.08);
+    border-color: rgba(8, 119, 201, 0.45);
+    box-shadow: 0 4px 12px rgba(8, 119, 201, 0.08);
+}
+
+
+/* =========================================================
+   STATISTICS
+========================================================= */
+
+.innovation-stats {
+    width: calc(100% - 8%);
+    margin: 0 4% 50px;
+    padding: 25px 28px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    border: 1px solid #e1e5e9;
+    border-radius: 12px;
+    background: linear-gradient( 135deg, #fafbfc, #f5f7f9);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.035);
+}
+
+
+/* =========================================================
+   STAT
+========================================================= */
+
+.innovation-stat {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    padding: 8px 28px;
+    border-right: 1px solid #d8dde2;
+    transition: transform 0.35s ease;
+}
+
+.innovation-stat:hover {
+    transform: translateY(-3px);
+}
+
+.innovation-stat:last-child {
+    border-right: none;
+}
+
+
+/* =========================================================
+   STAT ICON
+========================================================= */
+
+.innovation-stat-icon {
+    width: 53px;
+    height: 53px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(8, 119, 201, 0.4);
+    border-radius: 50%;
+    background: #ffffff;
+    color: #0877c9;
+    font-size: 21px;
+    box-shadow: 0 5px 17px rgba(8, 119, 201, 0.07);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.innovation-stat:hover .innovation-stat-icon {
+    transform: scale(1.06);
+    box-shadow: 0 8px 22px rgba(8, 119, 201, 0.12);
+}
+
+
+/* =========================================================
+   STAT NUMBER
+========================================================= */
+
+.innovation-stat strong {
+    display: block;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1;
+    margin-bottom: 7px;
+    letter-spacing: -0.03em;
+    color: #171717;
+}
+
+
+/* =========================================================
+   STAT TEXT
+========================================================= */
+
+.innovation-stat p {
+    margin: 0;
+    color: #5c6166;
+    font-size: 12.5px;
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   LARGE TABLET
+   3 CARDS PER ROW
+========================================================= */
+
+@media (max-width: 1200px) {
+    .innovation-hero {
+        min-height: 520px;
+    }
+    .innovation-cards {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+        padding: 22px 5% 42px;
+    }
+    .innovation-card {
+        min-height: 450px;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+    .innovation-page {
+        padding-top: 72px;
+    }
+    .innovation-hero {
+        min-height: 500px;
+        padding: 65px 5% 50px;
+    }
+    .innovation-hero-text {
+        width: 48%;
+    }
+    .innovation-hero-image {
+        width: 59%;
+    }
+    .innovation-cards {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+    }
+    .innovation-card {
+        min-height: 440px;
+    }
+    .innovation-card-image {
+        height: 175px;
+    }
+    .innovation-card-content {
+        min-height: 265px;
+        padding: 20px;
+    }
+    .innovation-card h2 {
+        font-size: 18px;
+    }
+    .innovation-card p {
+        font-size: 13px;
+    }
+    .innovation-stats {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 20px;
+    }
+    .innovation-stat {
+        min-height: 90px;
+        padding: 20px 24px;
+    }
+    .innovation-stat:nth-child(2) {
+        border-right: none;
+    }
+    .innovation-stat:nth-child(-n + 2) {
+        border-bottom: 1px solid #d8dde2;
+    }
+}
+
+
+/* =========================================================
+   SMALL TABLET
+   2 CARDS PER ROW
+========================================================= */
+
+@media (max-width: 760px) {
+    .innovation-page {
+        padding-top: 72px;
+    }
+    .innovation-back-button {
+        margin: 22px 22px 0;
+    }
+    .innovation-hero {
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 42px 22px 0;
+    }
+    .innovation-hero-text {
+        width: 100%;
+    }
+    .innovation-hero h1 {
+        font-size: 42px;
+    }
+    .innovation-hero-text>p {
+        font-size: 15px;
+        margin: 20px 0 24px;
+    }
+    .innovation-hero-image {
+        position: relative;
+        right: auto;
+        top: auto;
+        width: calc(100% + 44px);
+        height: 260px;
+        margin-left: -22px;
+        margin-top: 35px;
+    }
+    .innovation-hero-image::before {
+        display: none;
+    }
+    /* 2 CARDS */
+    .innovation-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        padding: 28px 22px 35px;
+    }
+    .innovation-card {
+        min-height: 435px;
+        border-radius: 11px;
+    }
+    .innovation-card-image {
+        height: 180px;
+    }
+    .innovation-card-content {
+        min-height: 255px;
+        padding: 20px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   1 CARD PER ROW
+========================================================= */
+
+@media (max-width: 600px) {
+    .innovation-page {
+        padding-top: 68px;
+    }
+    .innovation-back-button {
+        margin: 20px 20px 0;
+        padding: 10px 15px;
+        font-size: 11px;
+    }
+    .innovation-hero {
+        padding: 38px 20px 0;
+    }
+    .innovation-small-title span {
+        font-size: 12px;
+    }
+    .innovation-hero h1 {
+        font-size: 38px;
+        line-height: 1.06;
+    }
+    .innovation-hero-text>p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+    .innovation-primary-btn {
+        padding: 12px 15px;
+        font-size: 12px;
+    }
+    .innovation-hero-image {
+        width: calc(100% + 40px);
+        height: 235px;
+        margin-left: -20px;
+    }
+    /* 1 CARD */
+    .innovation-cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 28px 20px 35px;
+    }
+    .innovation-card {
+        min-height: 0;
+        border-radius: 12px;
+    }
+    .innovation-card-image {
+        height: 205px;
+    }
+    .innovation-card-content {
+        min-height: 230px;
+        padding: 22px;
+    }
+    .innovation-card h2 {
+        min-height: auto;
+        font-size: 20px;
+    }
+    .innovation-card p {
+        min-height: auto;
+        font-size: 14px;
+    }
+    .innovation-card button {
+        padding-top: 22px;
+    }
+    .innovation-stats {
+        width: calc(100% - 40px);
+        margin: 0 20px 30px;
+        padding: 0;
+        grid-template-columns: 1fr;
+        border-radius: 12px;
+    }
+    .innovation-stat {
+        min-height: auto;
+        padding: 22px;
+        border-right: none;
+        border-bottom: 1px solid #d8dde2;
+    }
+    .innovation-stat:nth-child(2) {
+        border-right: none;
+    }
+    .innovation-stat:last-child {
+        border-bottom: none;
+    }
+    .innovation-stat strong {
+        font-size: 28px;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 400px) {
+    .innovation-page {
+        padding-top: 68px;
+    }
+    .innovation-back-button {
+        margin: 18px 16px 0;
+        padding: 9px 13px;
+        font-size: 10px;
+    }
+    .innovation-hero {
+        padding: 35px 16px 0;
+    }
+    .innovation-hero h1 {
+        font-size: 33px;
+    }
+    .innovation-hero-text>p {
+        font-size: 13.5px;
+    }
+    .innovation-hero-image {
+        width: calc(100% + 32px);
+        margin-left: -16px;
+        height: 215px;
+    }
+    .innovation-cards {
+        padding: 24px 16px 30px;
+        gap: 17px;
+    }
+    .innovation-card {
+        border-radius: 11px;
+    }
+    .innovation-card-image {
+        height: 188px;
+    }
+    .innovation-card-content {
+        min-height: 220px;
+        padding: 20px;
+    }
+    .innovation-card h2 {
+        font-size: 19px;
+    }
+    .innovation-card p {
+        font-size: 13.5px;
+    }
+    .innovation-stats {
+        width: calc(100% - 32px);
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .innovation-page *,
+    .innovation-page *::before,
+    .innovation-page *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}

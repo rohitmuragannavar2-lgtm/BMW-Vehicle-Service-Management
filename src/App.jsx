@@ -32,6 +32,10 @@ import AdminVehicles from "./pages/AdminVehicles/AdminVehicles";
 import AdminServiceRequests from "./pages/AdminServiceRequests/AdminServiceRequests";
 import AdminOwners from "./pages/AdminOwners/AdminOwners";
 import AdminDocuments from "./pages/AdminDocuments/AdminDocuments";
+
+import InnovationPage from "./pages/Innovation/InnovationPage";
+
+
 /* =========================================================
    SCROLL MANAGER
 ========================================================= */
@@ -44,8 +48,7 @@ function ScrollManager() {
 
     if (location.pathname === "/") {
 
-      const hero =
-        document.getElementById("home");
+      const hero = document.getElementById("home");
 
       if (hero) {
 
@@ -114,10 +117,9 @@ function AppContent() {
   const location = useLocation();
 
 
-  /*
-    Hide the normal BMW Navbar
-    on login, owner and admin pages.
-  */
+  /* =======================================================
+     HIDE NORMAL NAVBAR ON DASHBOARDS
+  ======================================================= */
 
   const hideNavbar =
     location.pathname === "/login" ||
@@ -132,19 +134,10 @@ function AppContent() {
   return (
     <>
 
-      {/* =====================================================
-          NORMAL BMW NAVBAR
-      ===================================================== */}
-
       {!hideNavbar && <Navbar />}
 
 
-      {/* =====================================================
-          ROUTES
-      ===================================================== */}
-
       <Routes>
-
 
         {/* =================================================
             HOME
@@ -173,6 +166,16 @@ function AppContent() {
         <Route
           path="/models/:slug"
           element={<ModelDetails />}
+        />
+
+
+        {/* =================================================
+            INNOVATION DASHBOARD
+        ================================================= */}
+
+        <Route
+          path="/innovation"
+          element={<InnovationPage />}
         />
 
 
@@ -287,6 +290,26 @@ function AppContent() {
 
 
         {/* =================================================
+            ADMIN OWNERS
+        ================================================= */}
+
+        <Route
+          path="/admin-owners"
+          element={<AdminOwners />}
+        />
+
+
+        {/* =================================================
+            ADMIN DOCUMENTS
+        ================================================= */}
+
+        <Route
+          path="/admin-documents"
+          element={<AdminDocuments />}
+        />
+
+
+        {/* =================================================
             FALLBACK
         ================================================= */}
 
@@ -294,14 +317,7 @@ function AppContent() {
           path="*"
           element={<HomePage />}
         />
-        <Route
-  path="/admin-owners"
-  element={<AdminOwners />}
-/>
-          <Route
-  path="/admin-documents"
-  element={<AdminDocuments />}
-/>
+
       </Routes>
 
     </>

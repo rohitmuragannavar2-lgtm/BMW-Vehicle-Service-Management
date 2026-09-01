@@ -1,7 +1,6 @@
-import { useState } from "react";
+import { useState, useLayoutEffect } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import "./Models.css";
-
 
 const cars = [
   {
@@ -115,15 +114,52 @@ const cars = [
 ];
 
 function Models() {
- const [searchParams] = useSearchParams();
-
-const category = searchParams.get("category");
-
-const [filter, setFilter] = useState(
-  category || "ALL"
-);
-
+  const [searchParams] = useSearchParams();
   const navigate = useNavigate();
+
+  const category = searchParams.get("category");
+
+  const [filter, setFilter] = useState(
+    category || "ALL"
+  );
+
+  /* =====================================================
+     RESTORE MODELS SCROLL POSITION
+  ===================================================== */
+
+ useLayoutEffect(() => {
+  const modelSlug = sessionStorage.getItem("returnToModel");
+
+  if (!modelSlug) return;
+
+  const restoreModel = () => {
+    const cards = document.querySelectorAll(".model-card");
+
+    const targetCard = Array.from(cards).find((card) => {
+      const heading = card.querySelector("h2");
+
+      return (
+        heading &&
+        heading.textContent
+          .toLowerCase()
+          .includes(modelSlug.toLowerCase())
+      );
+    });
+
+    if (targetCard) {
+      targetCard.scrollIntoView({
+        behavior: "instant",
+        block: "center",
+      });
+
+      sessionStorage.removeItem("returnToModel");
+    }
+  };
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(restoreModel);
+  });
+}, []);
 
   const filteredCars =
     filter === "ALL"
@@ -268,15 +304,28 @@ const [filter, setFilter] = useState(
                 </div>
 
 
-               <button
-  className="model-explore"
-  onClick={() =>
-    navigate(`/models/${car.slug}`)
-  }
->
-  <span>EXPLORE MODEL</span>
-  <span className="explore-arrow">↗</span>
-</button>
+                <button
+                  className="model-explore"
+                onClick={() => {
+  sessionStorage.setItem(
+    "returnToModel",
+    car.slug
+  );
+
+  navigate(`/models/${car.slug}`);
+}}
+
+                >
+
+                  <span>
+                    EXPLORE MODEL
+                  </span>
+
+                  <span className="explore-arrow">
+                    ↗
+                  </span>
+
+                </button>
 
               </div>
 

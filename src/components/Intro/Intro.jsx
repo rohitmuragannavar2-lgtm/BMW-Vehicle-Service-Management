@@ -2,15 +2,23 @@ import { useEffect, useState } from "react";
 import "./Intro.css";
 
 function Intro() {
-  const [hideIntro, setHideIntro] = useState(false);
+  const [hideIntro, setHideIntro] = useState(() => {
+    return sessionStorage.getItem("introPlayed") === "true";
+  });
 
   useEffect(() => {
+    // Already played during this browser session
+    if (hideIntro) {
+      return;
+    }
+
     const timer = setTimeout(() => {
+      sessionStorage.setItem("introPlayed", "true");
       setHideIntro(true);
     }, 4200);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [hideIntro]);
 
   if (hideIntro) return null;
 
