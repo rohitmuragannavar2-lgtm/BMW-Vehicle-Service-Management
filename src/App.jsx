@@ -34,6 +34,7 @@ import AdminOwners from "./pages/AdminOwners/AdminOwners";
 import AdminDocuments from "./pages/AdminDocuments/AdminDocuments";
 
 import InnovationPage from "./pages/Innovation/InnovationPage";
+import Discover from "./pages/Discover/Discover";
 
 
 /* =========================================================
@@ -41,42 +42,31 @@ import InnovationPage from "./pages/Innovation/InnovationPage";
 ========================================================= */
 
 function ScrollManager() {
-
   const location = useLocation();
 
   useEffect(() => {
-
     if (location.pathname === "/") {
-
       const hero = document.getElementById("home");
 
       if (hero) {
-
         hero.scrollIntoView({
           behavior: "smooth",
           block: "start",
         });
-
       } else {
-
         window.scrollTo({
           top: 0,
           left: 0,
           behavior: "smooth",
         });
-
       }
-
     } else {
-
       window.scrollTo({
         top: 0,
         left: 0,
         behavior: "smooth",
       });
-
     }
-
   }, [location.pathname]);
 
   return null;
@@ -88,23 +78,16 @@ function ScrollManager() {
 ========================================================= */
 
 function HomePage() {
-
   return (
     <>
       <Intro />
-
       <Hero />
-
       <Performance />
-
       <Innovation />
-
       <Experience />
-
       <FinalCTA />
     </>
   );
-
 }
 
 
@@ -113,13 +96,7 @@ function HomePage() {
 ========================================================= */
 
 function AppContent() {
-
   const location = useLocation();
-
-
-  /* =======================================================
-     HIDE NORMAL NAVBAR ON DASHBOARDS
-  ======================================================= */
 
   const hideNavbar =
     location.pathname === "/login" ||
@@ -130,12 +107,9 @@ function AppContent() {
     location.pathname === "/documents" ||
     location.pathname.startsWith("/admin-");
 
-
   return (
     <>
-
       {!hideNavbar && <Navbar />}
-
 
       <Routes>
 
@@ -170,12 +144,22 @@ function AppContent() {
 
 
         {/* =================================================
-            INNOVATION DASHBOARD
+            INNOVATION
         ================================================= */}
 
         <Route
           path="/innovation"
           element={<InnovationPage />}
+        />
+
+
+        {/* =================================================
+            DISCOVER
+        ================================================= */}
+
+        <Route
+          path="/discover"
+          element={<Discover />}
         />
 
 
@@ -319,7 +303,6 @@ function AppContent() {
         />
 
       </Routes>
-
     </>
   );
 }
@@ -330,18 +313,12 @@ function AppContent() {
 ========================================================= */
 
 function App() {
-
   return (
     <BrowserRouter>
-
       <ScrollManager />
-
       <AppContent />
-
     </BrowserRouter>
   );
-
 }
-
 
 export default App;

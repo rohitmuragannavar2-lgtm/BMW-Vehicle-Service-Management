@@ -9,20 +9,16 @@ import {
 import gsap from "gsap";
 import "./Navbar.css";
 
-
 function Navbar() {
-
   const navigate = useNavigate();
 
   const [menuOpen, setMenuOpen] = useState(false);
-
 
   /* =====================================================
      NAVBAR ANIMATION
   ===================================================== */
 
   useEffect(() => {
-
     const tl = gsap.timeline();
 
     tl.fromTo(
@@ -91,9 +87,7 @@ function Navbar() {
     return () => {
       tl.kill();
     };
-
   }, []);
-
 
   /* =====================================================
      CLOSE MOBILE MENU
@@ -103,123 +97,55 @@ function Navbar() {
     setMenuOpen(false);
   };
 
-
   /* =====================================================
      SERVICES
   ===================================================== */
 
   const handleServices = () => {
-
     closeMenu();
 
-    const loggedIn =
-      localStorage.getItem("bmwLoggedIn");
+    const loggedIn = localStorage.getItem("bmwLoggedIn");
 
     if (loggedIn === "true") {
-
       navigate("/service-request");
-
     } else {
-
       navigate("/login");
-
     }
-
   };
-
-
-  /* =====================================================
-     DISCOVER
-  ===================================================== */
-
-  const handleDiscover = (event) => {
-
-    event.preventDefault();
-
-    closeMenu();
-
-    if (window.location.pathname === "/") {
-
-      const about =
-        document.getElementById("about");
-
-      if (about) {
-
-        about.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-
-      }
-
-    } else {
-
-      navigate("/");
-
-      setTimeout(() => {
-
-        const about =
-          document.getElementById("about");
-
-        if (about) {
-
-          about.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-          });
-
-        }
-
-      }, 300);
-
-    }
-
-  };
-
 
   /* =====================================================
      RENDER
   ===================================================== */
 
   return (
-
     <nav className="navbar">
 
-
-      {/* =================================================
-          LOGO
-      ================================================= */}
+      {/* LOGO */}
 
       <div className="nav-brand">
-
         <div className="nav-logo">
-
           <img
             src="/BMW_India-Logo.wine.png"
             alt="BMW"
           />
-
         </div>
 
         <span className="brand-name">
           BMW
         </span>
-
       </div>
 
 
-      {/* =================================================
-          DESKTOP NAVIGATION
-      ================================================= */}
+      {/* DESKTOP NAVIGATION */}
 
       <div className="nav-links">
-
 
         {/* HOME */}
 
         <Link
           to="/"
           className="nav-item active"
+          onClick={closeMenu}
         >
           HOME
         </Link>
@@ -230,6 +156,7 @@ function Navbar() {
         <Link
           to="/models"
           className="nav-item"
+          onClick={closeMenu}
         >
           MODELS
         </Link>
@@ -245,14 +172,12 @@ function Navbar() {
         </button>
 
 
-        {/* =================================================
-            INNOVATION
-            THIS OPENS THE SEPARATE DASHBOARD
-        ================================================= */}
+        {/* INNOVATION */}
 
         <Link
           to="/innovation"
           className="nav-item"
+          onClick={closeMenu}
         >
           INNOVATION
         </Link>
@@ -260,23 +185,20 @@ function Navbar() {
 
         {/* DISCOVER */}
 
-        <a
-          href="#about"
+        <Link
+          to="/discover"
           className="nav-item"
-          onClick={handleDiscover}
+          onClick={closeMenu}
         >
           DISCOVER
-        </a>
+        </Link>
 
       </div>
 
 
-      {/* =================================================
-          RIGHT ACTIONS
-      ================================================= */}
+      {/* RIGHT ACTIONS */}
 
       <div className="nav-actions">
-
 
         {/* LOGIN */}
 
@@ -284,7 +206,6 @@ function Navbar() {
           className="login-button"
           onClick={() => navigate("/login")}
         >
-
           <User
             size={16}
             strokeWidth={1.5}
@@ -293,7 +214,6 @@ function Navbar() {
           <span>
             LOGIN
           </span>
-
         </button>
 
 
@@ -303,7 +223,6 @@ function Navbar() {
           className="register-button"
           onClick={() => navigate("/login")}
         >
-
           <span>
             REGISTER
           </span>
@@ -312,7 +231,6 @@ function Navbar() {
             size={16}
             strokeWidth={1.5}
           />
-
         </button>
 
 
@@ -320,9 +238,7 @@ function Navbar() {
 
         <button
           className="menu-button"
-          onClick={() =>
-            setMenuOpen(!menuOpen)
-          }
+          onClick={() => setMenuOpen(!menuOpen)}
           aria-label={
             menuOpen
               ? "Close navigation menu"
@@ -330,36 +246,26 @@ function Navbar() {
           }
           aria-expanded={menuOpen}
         >
-
           {menuOpen ? (
-
             <X
               size={22}
               strokeWidth={1.5}
             />
-
           ) : (
-
             <Menu
               size={22}
               strokeWidth={1.5}
             />
-
           )}
-
         </button>
 
       </div>
 
 
-      {/* =================================================
-          MOBILE MENU
-      ================================================= */}
+      {/* MOBILE MENU */}
 
       {menuOpen && (
-
         <div className="mobile-menu">
-
 
           {/* HOME */}
 
@@ -390,9 +296,7 @@ function Navbar() {
           </button>
 
 
-          {/* =================================================
-              MOBILE INNOVATION
-          ================================================= */}
+          {/* INNOVATION */}
 
           <Link
             to="/innovation"
@@ -404,12 +308,12 @@ function Navbar() {
 
           {/* DISCOVER */}
 
-          <a
-            href="#about"
-            onClick={handleDiscover}
+          <Link
+            to="/discover"
+            onClick={closeMenu}
           >
             DISCOVER
-          </a>
+          </Link>
 
 
           {/* LOGIN */}
@@ -417,33 +321,23 @@ function Navbar() {
           <button
             className="mobile-login"
             onClick={() => {
-
               closeMenu();
-
               navigate("/login");
-
             }}
           >
-
             <User
               size={15}
               strokeWidth={1.5}
             />
 
             LOGIN
-
           </button>
 
-
         </div>
-
       )}
 
     </nav>
-
   );
-
 }
-
 
 export default Navbar;
