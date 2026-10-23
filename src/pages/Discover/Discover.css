@@ -13,6 +13,24 @@
 
 
 /* ================================
+   MOBILE HERO POSITION
+================================ */
+
+@media (max-width: 768px) {
+    .discover-hero {
+        padding: 75px 25px 0;
+    }
+    .discover-hero-content {
+        padding-top: 20px;
+        padding-bottom: 35px;
+    }
+    .discover-hero-image {
+        display: none;
+    }
+}
+
+
+/* ================================
    HERO
 ================================ */
 
@@ -122,8 +140,8 @@
 .discover-cards {
     width: 100%;
     display: grid;
-    /* 4 CARDS PER ROW */
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    /* 3 CARDS PER ROW */
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 24px;
     align-items: stretch;
 }
@@ -138,7 +156,6 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    /* EQUAL CARD HEIGHT */
     min-height: 490px;
     overflow: hidden;
     border-radius: 12px;
@@ -162,7 +179,6 @@
 
 .discover-card-image {
     width: 100%;
-    /* SAME HEIGHT FOR EVERY CARD */
     height: 210px;
     flex-shrink: 0;
     position: relative;
@@ -192,7 +208,6 @@
 .discover-card-content {
     width: 100%;
     flex: 1;
-    /* SAME CONTENT HEIGHT */
     min-height: 280px;
     padding: 25px;
     display: flex;
@@ -403,11 +418,12 @@
 @media (max-width: 768px) {
     .discover-hero {
         min-height: auto;
-        padding: 45px 25px 0;
+        padding: 75px 25px 0;
         display: block;
     }
     .discover-hero-content {
         width: 100%;
+        padding-top: 20px;
         padding-bottom: 35px;
     }
     .discover-hero-content h1 {
@@ -418,15 +434,6 @@
         font-size: 16px;
     }
     .discover-hero-image {
-        position: relative;
-        width: calc(100% + 50px);
-        height: 300px;
-        right: auto;
-        top: auto;
-        margin-left: -25px;
-        border-radius: 0;
-    }
-    .discover-hero-image::after {
         display: none;
     }
     /* ONE CARD PER ROW */

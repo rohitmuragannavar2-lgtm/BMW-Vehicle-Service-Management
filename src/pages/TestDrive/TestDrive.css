@@ -1,0 +1,330 @@
+/* ========================================
+   TEST DRIVE PAGE
+======================================== */
+
+.test-drive-page {
+    min-height: 100vh;
+    background: #f4f6f8;
+    color: #111;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.test-drive-header {
+    background: #ffffff;
+    padding: 40px 6%;
+    border-bottom: 1px solid #ddd;
+}
+
+
+/* BACK BUTTON */
+
+.test-drive-back {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #000;
+    color: #fff;
+    border: 1px solid #000;
+    border-radius: 6px;
+    padding: 15px 24px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    margin-bottom: 40px;
+    transition: all 0.3s ease;
+}
+
+.test-drive-back:hover {
+    background: #222;
+    border-color: #222;
+    transform: translateX(-3px);
+}
+
+.test-drive-back svg {
+    width: 20px;
+    height: 20px;
+}
+
+
+/* TITLE */
+
+.test-drive-title span {
+    display: block;
+    color: #0877d1;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.test-drive-title h1 {
+    margin: 10px 0 0;
+    font-size: 55px;
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+
+/* ========================================
+   MAIN
+======================================== */
+
+.test-drive-main {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 60px 5%;
+}
+
+
+/* ========================================
+   INTRO
+======================================== */
+
+.test-drive-intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 45px;
+}
+
+.section-label {
+    color: #0877d1;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.test-drive-intro h2 {
+    margin: 15px 0;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+.test-drive-intro p {
+    max-width: 600px;
+    margin: 0;
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+
+/* INTRO ICON */
+
+.test-drive-icon {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: #fff;
+    border-radius: 50%;
+    color: #0877d1;
+}
+
+
+/* ========================================
+   BOOKING CARD
+======================================== */
+
+.booking-card {
+    background: #fff;
+    padding: 35px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+}
+
+
+/* BOOKING HEADING */
+
+.booking-heading {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    color: #0877d1;
+}
+
+.booking-heading span {
+    display: block;
+    color: #0877d1;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.booking-heading h2 {
+    margin: 5px 0 0;
+    color: #111;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+
+/* ========================================
+   VEHICLE OPTIONS
+======================================== */
+
+.vehicle-options {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+
+/* VEHICLE CARD */
+
+.vehicle-option {
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.vehicle-option:hover {
+    border-color: #0877d1;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+
+/* VEHICLE IMAGE */
+
+.vehicle-option img {
+    display: block;
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+
+/* VEHICLE CONTENT */
+
+.vehicle-option div {
+    padding: 18px;
+}
+
+.vehicle-option strong {
+    display: block;
+    margin-bottom: 6px;
+    color: #111;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.vehicle-option span {
+    color: #777;
+    font-size: 13px;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 950px) {
+    .test-drive-title h1 {
+        font-size: 48px;
+    }
+    .test-drive-intro h2 {
+        font-size: 42px;
+    }
+    .vehicle-options {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+    .test-drive-header {
+        padding: 30px 25px;
+    }
+    .test-drive-back {
+        padding: 13px 18px;
+        margin-bottom: 30px;
+        font-size: 11px;
+    }
+    .test-drive-title h1 {
+        font-size: 40px;
+    }
+    .test-drive-main {
+        padding: 40px 25px;
+    }
+    .test-drive-intro {
+        display: block;
+    }
+    .test-drive-intro h2 {
+        font-size: 36px;
+    }
+    .test-drive-intro p {
+        font-size: 15px;
+    }
+    .test-drive-icon {
+        display: none;
+    }
+    .booking-card {
+        padding: 22px;
+    }
+    .booking-heading {
+        gap: 12px;
+    }
+    .booking-heading h2 {
+        font-size: 21px;
+    }
+    .vehicle-options {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    .vehicle-option img {
+        height: 190px;
+    }
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 480px) {
+    .test-drive-header {
+        padding: 25px 18px;
+    }
+    .test-drive-main {
+        padding: 30px 18px;
+    }
+    .test-drive-back {
+        padding: 12px 16px;
+        font-size: 10px;
+        letter-spacing: 1.2px;
+    }
+    .test-drive-title h1 {
+        font-size: 34px;
+    }
+    .test-drive-title span {
+        font-size: 11px;
+    }
+    .test-drive-intro h2 {
+        font-size: 31px;
+    }
+    .test-drive-intro p {
+        font-size: 14px;
+    }
+    .booking-card {
+        padding: 18px;
+        border-radius: 10px;
+    }
+    .vehicle-option img {
+        height: 170px;
+    }
+}

@@ -1,0 +1,718 @@
+/* =========================================================
+   AUTOSPHERE SERVICE TEAM DASHBOARD
+   Premium Black / White / Blue Edition
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+.service-dashboard {
+    min-height: 100vh;
+    display: flex;
+    background: #f7f8fa;
+    color: #111;
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.service-sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: 255px;
+    display: flex;
+    flex-direction: column;
+    padding: 28px 18px;
+    background: #ffffff;
+    color: #111;
+    border-right: 1px solid #e5e5e5;
+    z-index: 100;
+}
+
+.service-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 4px 10px 28px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.service-logo img {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    padding: 4px;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.service-logo h2 {
+    margin: 0 0 4px;
+    color: #111;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.service-logo p {
+    margin: 0;
+    color: #888;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   SIDEBAR NAVIGATION
+========================================================= */
+
+.service-sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 28px;
+}
+
+.service-sidebar nav a {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    height: 50px;
+    padding: 0 15px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    color: #666;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.service-sidebar nav a svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.service-sidebar nav a:hover {
+    color: #111;
+    background: #f5f7f9;
+    border-color: #e5e5e5;
+    transform: translateX(3px);
+}
+
+.service-sidebar nav a.active {
+    color: #fff;
+    background: #111;
+    border-color: #111;
+}
+
+.service-sidebar nav a.active::before {
+    content: "";
+    width: 3px;
+    height: 26px;
+    margin-left: -16px;
+    border-radius: 4px;
+    background: #0879ca;
+}
+
+
+/* =========================================================
+   SIDEBAR USER
+========================================================= */
+
+.sidebar-user {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin-top: auto;
+    padding: 18px 10px;
+    border-top: 1px solid #e5e5e5;
+}
+
+.sidebar-user svg {
+    width: 38px;
+    height: 38px;
+    padding: 9px;
+    color: #0879ca;
+    background: #edf6fd;
+    border: 1px solid #d8eaf7;
+    border-radius: 50%;
+}
+
+.sidebar-user strong {
+    display: block;
+    color: #222;
+    font-size: 12px;
+}
+
+.sidebar-user span {
+    display: block;
+    margin-top: 4px;
+    color: #888;
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+.logout-button {
+    width: 100%;
+    height: 46px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #fff;
+    color: #444;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.logout-button:hover {
+    background: #111;
+    color: #fff;
+    border-color: #111;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.service-main {
+    width: calc(100% - 255px);
+    margin-left: 255px;
+    min-height: 100vh;
+    background: #f7f8fa;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.service-header {
+    min-height: 105px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 52px;
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.service-header span {
+    display: block;
+    margin-bottom: 8px;
+    color: #0879ca;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.service-header h1 {
+    margin: 0;
+    color: #111;
+    font-size: 29px;
+    font-weight: 600;
+    letter-spacing: -1px;
+}
+
+.service-header p {
+    margin: 7px 0 0;
+    color: #858585;
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   NOTIFICATION
+========================================================= */
+
+.notification {
+    position: relative;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    background: #fff;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.notification:hover {
+    color: #0879ca;
+    border-color: #0879ca;
+    transform: translateY(-2px);
+}
+
+.notification::after {
+    content: "";
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    width: 7px;
+    height: 7px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    background: #0879ca;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.search-row {
+    display: flex;
+    gap: 14px;
+    padding: 32px 52px 0;
+}
+
+.search-box {
+    flex: 1;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 17px;
+    background: #fff;
+    border: 1px solid #dedede;
+    border-radius: 6px;
+    color: #888;
+    transition: all 0.25s ease;
+}
+
+.search-box:focus-within {
+    border-color: #0879ca;
+    box-shadow: 0 0 0 3px rgba(8, 121, 202, 0.08);
+}
+
+.search-box input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #222;
+    font-family: inherit;
+    font-size: 12px;
+}
+
+.search-box input::placeholder {
+    color: #999;
+}
+
+
+/* =========================================================
+   NEW SERVICE BUTTON
+========================================================= */
+
+.new-service {
+    height: 52px;
+    padding: 0 24px;
+    border: 1px solid #000;
+    border-radius: 6px;
+    background: #000;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.new-service:hover {
+    background: #0879ca;
+    border-color: #0879ca;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    padding: 28px 52px 40px;
+}
+
+.stat-card {
+    min-height: 125px;
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    padding: 23px;
+    background: #fff;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    border-color: #cfcfcf;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.07);
+}
+
+.stat-card svg {
+    width: 48px;
+    height: 48px;
+    padding: 12px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background: #edf6fd;
+    color: #0879ca;
+}
+
+.stat-card p {
+    margin: 0;
+    color: #888;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.stat-card h2 {
+    margin: 7px 0 0;
+    color: #111;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   DASHBOARD GRID
+========================================================= */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 20px;
+    padding: 0 52px 60px;
+}
+
+.dashboard-card {
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+}
+
+
+/* =========================================================
+   CARD TITLE
+========================================================= */
+
+.card-title {
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 25px 27px;
+    border-bottom: 1px solid #ededed;
+}
+
+.card-title small {
+    display: block;
+    margin-bottom: 7px;
+    color: #0879ca;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.card-title h2 {
+    margin: 0;
+    color: #111;
+    font-size: 21px;
+    font-weight: 600;
+}
+
+.card-title button {
+    border: none;
+    background: transparent;
+    color: #0879ca;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.card-title button:hover {
+    color: #000;
+}
+
+
+/* =========================================================
+   SERVICE REQUEST
+========================================================= */
+
+.request {
+    min-height: 105px;
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 27px;
+    border-bottom: 1px solid #ededed;
+    background: #fff;
+    transition: all 0.25s ease;
+}
+
+.request:last-child {
+    border-bottom: none;
+}
+
+.request:hover {
+    background: #fafcff;
+}
+
+.request strong {
+    display: block;
+    margin-bottom: 5px;
+    color: #222;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.request span {
+    display: block;
+    color: #8a8a8a;
+    font-size: 9px;
+    line-height: 1.5;
+}
+
+.request b {
+    justify-self: end;
+    padding: 7px 12px;
+    border-radius: 20px;
+    font-size: 8px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.request b.green {
+    background: #edf8f2;
+    color: #258451;
+    border: 1px solid #d2eadf;
+}
+
+.request b.blue {
+    background: #edf6fd;
+    color: #0879ca;
+    border: 1px solid #d5e8f5;
+}
+
+.request b.orange {
+    background: #fff6e8;
+    color: #b77713;
+    border: 1px solid #f2dfba;
+}
+
+
+/* =========================================================
+   QUICK ACTIONS
+========================================================= */
+
+.action {
+    width: 100%;
+    min-height: 82px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 27px;
+    border: none;
+    border-bottom: 1px solid #ededed;
+    background: #fff;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.action:last-child {
+    border-bottom: none;
+}
+
+.action:hover {
+    background: #fafcff;
+    padding-left: 32px;
+}
+
+.action svg {
+    width: 21px;
+    height: 21px;
+    flex-shrink: 0;
+    color: #0879ca;
+}
+
+.action div {
+    flex: 1;
+}
+
+.action strong {
+    display: block;
+    margin-bottom: 5px;
+    color: #222;
+    font-size: 12px;
+}
+
+.action span {
+    display: block;
+    color: #909090;
+    font-size: 9px;
+    line-height: 1.5;
+}
+
+.action:hover strong {
+    color: #0879ca;
+}
+
+
+/* =========================================================
+   RESPONSIVE - 1200px
+========================================================= */
+
+@media (max-width: 1200px) {
+    .service-sidebar {
+        width: 220px;
+    }
+    .service-main {
+        width: calc(100% - 220px);
+        margin-left: 220px;
+    }
+    .service-header,
+    .search-row,
+    .stats,
+    .dashboard-grid {
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - 850px
+========================================================= */
+
+@media (max-width: 850px) {
+    .service-dashboard {
+        display: block;
+    }
+    .service-sidebar {
+        position: relative;
+        width: 100%;
+        min-height: auto;
+        padding: 18px;
+        border-right: none;
+        border-bottom: 1px solid #e5e5e5;
+    }
+    .service-sidebar nav {
+        flex-direction: row;
+        overflow-x: auto;
+        margin-top: 20px;
+        padding-bottom: 5px;
+    }
+    .service-sidebar nav a {
+        min-width: 130px;
+        flex-shrink: 0;
+    }
+    .service-sidebar nav a.active::before {
+        display: none;
+    }
+    .sidebar-user {
+        margin-top: 18px;
+    }
+    .service-main {
+        width: 100%;
+        margin-left: 0;
+    }
+    .service-header {
+        padding: 22px;
+    }
+    .search-row {
+        padding: 25px 22px 0;
+    }
+    .stats {
+        padding: 22px;
+    }
+    .dashboard-grid {
+        padding: 0 22px 45px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - 600px
+========================================================= */
+
+@media (max-width: 600px) {
+    .service-header {
+        min-height: 90px;
+    }
+    .service-header h1 {
+        font-size: 24px;
+    }
+    .service-header p {
+        font-size: 10px;
+    }
+    .notification {
+        width: 40px;
+        height: 40px;
+    }
+    .search-row {
+        flex-direction: column;
+    }
+    .new-service {
+        width: 100%;
+    }
+    .stats {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    .dashboard-grid {
+        gap: 16px;
+    }
+    .card-title {
+        padding: 21px;
+    }
+    .card-title h2 {
+        font-size: 18px;
+    }
+    .request {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 20px;
+    }
+    .request b {
+        justify-self: start;
+    }
+    .action {
+        padding: 18px 20px;
+    }
+}

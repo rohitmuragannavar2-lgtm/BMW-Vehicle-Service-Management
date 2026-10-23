@@ -1,0 +1,860 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700&display=swap");
+:root {
+    --blue: #0877d1;
+    --blue-light: #eef7ff;
+    --text: #15181c;
+    --muted: #747b84;
+    --border: #e4e7eb;
+    --background: #f6f7f9;
+    --card: #ffffff;
+    --radius: 12px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    font-family: "Inter", sans-serif;
+}
+
+
+/* ================= MAIN ================= */
+
+.service-record-page {
+    min-height: 100vh;
+    padding: 38px 48px 60px;
+    background: radial-gradient( circle at 90% 0%, rgba(8, 119, 209, 0.055), transparent 28%), var(--background);
+}
+
+
+/* ================= HEADER ================= */
+
+.record-header {
+    margin-bottom: 30px;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 25px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    color: var(--blue);
+}
+
+.record-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--blue);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+}
+
+.eyebrow span {
+    width: 18px;
+    height: 1px;
+    background: var(--blue);
+}
+
+.record-heading h1 {
+    margin: 9px 0 7px;
+    font-family: "Manrope", sans-serif;
+    font-size: 38px;
+    font-weight: 600;
+    letter-spacing: -1.3px;
+}
+
+.record-heading p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.request-reference {
+    padding: 13px 18px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    text-align: right;
+}
+
+.request-reference span {
+    display: block;
+    color: #999;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.request-reference strong {
+    display: block;
+    margin-top: 5px;
+    color: var(--blue);
+    font-size: 14px;
+}
+
+
+/* ================= CARDS ================= */
+
+.record-card {
+    overflow: hidden;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.025);
+}
+
+.record-top-grid {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr;
+    gap: 18px;
+    margin-bottom: 18px;
+}
+
+.card-header,
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 23px;
+    border-bottom: 1px solid #edf0f2;
+}
+
+.card-header {
+    justify-content: flex-start;
+    gap: 11px;
+}
+
+.header-icon,
+.invoice-icon {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blue);
+    background: var(--blue-light);
+    border-radius: 8px;
+}
+
+.card-header span,
+.section-header>div>span,
+.invoice-header span {
+    display: block;
+    color: var(--blue);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.card-header h2,
+.section-header h2,
+.invoice-header h2 {
+    margin: 4px 0 0;
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+
+/* ================= VEHICLE ================= */
+
+.vehicle-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 21px 23px;
+}
+
+.vehicle-image {
+    width: 125px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f7f8f9;
+    border-radius: 8px;
+}
+
+.vehicle-image img {
+    width: 115px;
+    height: 65px;
+    object-fit: contain;
+}
+
+.vehicle-name h3,
+.customer h3 {
+    margin: 0 0 5px;
+    font-family: "Manrope", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.vehicle-name span,
+.customer span {
+    color: #8b929a;
+    font-size: 9px;
+}
+
+.vehicle-meta,
+.customer-meta {
+    display: grid;
+    border-top: 1px solid #edf0f2;
+}
+
+.vehicle-meta {
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0 23px;
+}
+
+.vehicle-meta div,
+.customer-meta div {
+    padding: 14px 10px 18px 0;
+}
+
+.vehicle-meta span,
+.customer-meta span {
+    display: block;
+    color: #999;
+    font-size: 7px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+}
+
+.vehicle-meta strong,
+.customer-meta strong {
+    display: block;
+    margin-top: 5px;
+    color: #2c3035;
+    font-size: 9px;
+    font-weight: 600;
+}
+
+
+/* ================= CUSTOMER ================= */
+
+.customer {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 24px;
+}
+
+.customer-avatar {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blue);
+    background: var(--blue-light);
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.customer-meta {
+    grid-template-columns: 1fr 1fr;
+    margin: 0 24px;
+}
+
+
+/* ================= SERVICE ================= */
+
+.service-section {
+    margin-bottom: 18px;
+    padding-bottom: 25px;
+}
+
+.date-badge {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: #6e757d;
+    font-size: 9px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    padding: 22px 23px 0;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.field.full {
+    margin: 18px 23px 0;
+}
+
+.field label {
+    color: #60676f;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+}
+
+.field input,
+.field select,
+.field textarea {
+    width: 100%;
+    border: 1px solid #dfe3e7;
+    border-radius: 7px;
+    background: #fff;
+    color: #25292e;
+    outline: none;
+    font-family: inherit;
+    font-size: 10px;
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.field input,
+.field select {
+    height: 40px;
+    padding: 0 12px;
+}
+
+.field textarea {
+    min-height: 90px;
+    padding: 11px 12px;
+    resize: vertical;
+    line-height: 1.55;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(8, 119, 209, 0.07);
+}
+
+
+/* ================= PARTS ================= */
+
+.parts-section {
+    margin-bottom: 18px;
+}
+
+.parts-count {
+    padding: 6px 10px;
+    color: #68707a;
+    background: #f5f6f7;
+    border: 1px solid #e5e7e9;
+    border-radius: 6px;
+    font-size: 8px;
+    font-weight: 600;
+}
+
+
+/* PART SELECTOR */
+
+.part-selector {
+    display: grid;
+    grid-template-columns: 1fr 100px 120px;
+    gap: 10px;
+    padding: 18px 23px;
+    background: #fafbfc;
+    border-bottom: 1px solid #edf0f2;
+}
+
+.part-select {
+    position: relative;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 0 12px;
+    background: #fff;
+    border: 1px solid #dfe3e7;
+    border-radius: 7px;
+}
+
+.part-select>svg:first-child {
+    flex-shrink: 0;
+    color: var(--blue);
+}
+
+.part-select select {
+    width: 100%;
+    height: 100%;
+    appearance: none;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: #30343a;
+    font-family: inherit;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.part-select>svg:last-child {
+    pointer-events: none;
+    color: #90969d;
+}
+
+.quantity-select {
+    position: relative;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #dfe3e7;
+    border-radius: 7px;
+    background: #fff;
+}
+
+.quantity-select label {
+    padding-left: 10px;
+    color: #9a9fa5;
+    font-size: 7px;
+    font-weight: 700;
+}
+
+.quantity-select select {
+    width: 45px;
+    height: 100%;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    font-family: inherit;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.add-part-button {
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    color: #fff;
+    background: var(--blue);
+    border: 0;
+    border-radius: 7px;
+    font-family: inherit;
+    font-size: 9px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.add-part-button:hover {
+    background: #0668b9;
+}
+
+
+/* EMPTY */
+
+.empty-parts {
+    padding: 38px 20px;
+    text-align: center;
+}
+
+.empty-parts>div {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+    color: #8c949c;
+    background: #f5f6f7;
+    border-radius: 50%;
+}
+
+.empty-parts h3 {
+    margin: 0 0 5px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.empty-parts p {
+    margin: 0;
+    color: #9a9fa5;
+    font-size: 9px;
+}
+
+
+/* PART TABLE */
+
+.parts-list-header,
+.part-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 80px 130px 130px 40px;
+    align-items: center;
+    gap: 15px;
+    padding: 0 23px;
+}
+
+.parts-list-header {
+    height: 39px;
+    background: #fff;
+    border-bottom: 1px solid #edf0f2;
+}
+
+.parts-list-header span {
+    color: #999fa6;
+    font-size: 7px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.part-row {
+    min-height: 65px;
+    border-bottom: 1px solid #edf0f2;
+}
+
+.part-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.part-icon {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blue);
+    background: var(--blue-light);
+    border-radius: 7px;
+}
+
+.part-name strong {
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.category {
+    color: #7f868e;
+    font-size: 9px;
+}
+
+.part-row select {
+    width: 55px;
+    height: 32px;
+    padding-left: 8px;
+    border: 1px solid #dfe3e7;
+    border-radius: 6px;
+    background: #fff;
+    font-family: inherit;
+    font-size: 9px;
+    outline: none;
+}
+
+.unit-price,
+.part-total {
+    font-size: 9px;
+}
+
+.part-total {
+    font-weight: 600;
+}
+
+.remove-part {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    background: #fff;
+    border: 1px solid #e3e6e9;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.remove-part:hover {
+    color: #d23c3c;
+    background: #fff3f3;
+}
+
+.parts-total {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 35px;
+    padding: 18px 23px;
+    background: #fafbfc;
+}
+
+.parts-total span {
+    color: #6d747c;
+    font-size: 10px;
+}
+
+.parts-total strong {
+    min-width: 130px;
+    color: #171a1e;
+    font-family: "Manrope", sans-serif;
+    font-size: 15px;
+    text-align: right;
+}
+
+
+/* ================= BILLING ================= */
+
+.billing-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 22px;
+}
+
+.billing-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    padding: 23px;
+}
+
+.money-field {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #dfe3e7;
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+.money-field span {
+    padding-left: 12px;
+    color: #858c94;
+    font-size: 10px;
+}
+
+.money-field input {
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
+    border: 0;
+    outline: 0;
+    font-family: inherit;
+    font-size: 10px;
+}
+
+
+/* ================= INVOICE ================= */
+
+.invoice-card {
+    padding: 22px 23px;
+    color: #fff;
+    background: linear-gradient( 145deg, #17191c, #0d0f11);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.invoice-header {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding-bottom: 17px;
+    border-bottom: 1px solid rgba( 255, 255, 255, 0.1);
+}
+
+.invoice-icon {
+    background: rgba( 8, 119, 209, 0.14);
+}
+
+.invoice-lines>div {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba( 255, 255, 255, 0.07);
+    color: #aeb4bb;
+    font-size: 9px;
+}
+
+.invoice-lines strong {
+    color: #e8eaec;
+    font-weight: 500;
+}
+
+.invoice-total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 18px;
+}
+
+.invoice-total span {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.7px;
+}
+
+.invoice-total strong {
+    font-family: "Manrope", sans-serif;
+    font-size: 23px;
+}
+
+
+/* ================= ACTIONS ================= */
+
+.record-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 9px;
+}
+
+.record-actions button {
+    height: 43px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 0 17px;
+    border-radius: 7px;
+    font-family: inherit;
+    font-size: 9px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.cancel-button {
+    color: #60666d;
+    background: #fff;
+    border: 1px solid var(--border);
+}
+
+.cancel-button:hover {
+    background: #f2f3f4;
+}
+
+.save-button {
+    color: #fff;
+    background: #151719;
+    border: 1px solid #151719;
+}
+
+.save-button:hover {
+    background: #292b2e;
+}
+
+.invoice-button {
+    color: #fff;
+    background: var(--blue);
+    border: 1px solid var(--blue);
+    box-shadow: 0 5px 15px rgba( 8, 119, 209, 0.18);
+}
+
+.invoice-button:hover {
+    background: #0668b9;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1050px) {
+    .record-top-grid,
+    .billing-layout {
+        grid-template-columns: 1fr;
+    }
+    .parts-list {
+        overflow-x: auto;
+    }
+    .parts-list-header,
+    .part-row {
+        min-width: 760px;
+    }
+}
+
+@media (max-width: 700px) {
+    .service-record-page {
+        padding: 25px 18px 40px;
+    }
+    .record-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+    }
+    .record-heading h1 {
+        font-size: 30px;
+    }
+    .request-reference {
+        width: 100%;
+        text-align: left;
+    }
+    .form-grid,
+    .billing-content {
+        grid-template-columns: 1fr;
+    }
+    .part-selector {
+        grid-template-columns: 1fr;
+    }
+    .record-actions {
+        flex-direction: column;
+    }
+    .record-actions button {
+        width: 100%;
+    }
+    .vehicle-meta {
+        grid-template-columns: 1fr 1fr;
+    }
+    .customer-meta {
+        grid-template-columns: 1fr;
+    }
+    .vehicle-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .vehicle-image {
+        width: 100%;
+    }
+    .vehicle-image img {
+        max-width: 100%;
+    }
+    .section-header,
+    .card-header {
+        padding: 18px;
+    }
+    .field.full {
+        margin-left: 18px;
+        margin-right: 18px;
+    }
+    .form-grid {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+}
+
+@media (max-width: 450px) {
+    .service-record-page {
+        padding: 20px 14px 30px;
+    }
+    .record-heading h1 {
+        font-size: 26px;
+    }
+    .vehicle-meta {
+        grid-template-columns: 1fr;
+    }
+    .record-actions button {
+        height: 46px;
+    }
+}

@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-
+import { vehicles } from "../../data/vehicles";
 import {
   Car,
   CalendarDays,
@@ -21,25 +21,32 @@ import "./OwnerDashboard.css";
 function OwnerDashboard() {
   const navigate = useNavigate();
 
-  const owner = {
-    name: "Rohit Muragannavar",
-    phone: "+91 XXXXX XXXXX",
+const userId = localStorage.getItem("bmwUserId");
 
-    vehicle: {
-      model: "BMW i5 eDrive40",
-      registration: "KA-25-MH-4827",
-      vin: "WBY21FJ08PCT47291",
-      purchaseDate: "15 March 2025",
-      colour: "Red",
-      fuel: "Electric (EV)",
-      transmission: "Single-Speed Automatic",
-      mileage: "18,450 km",
-      nextService: "15 September 2026",
-      serviceStatus: "Service Up to Date",
-      serviceHistory: "3 Services Completed",
-      appointment: "Confirmed — 15 September 2026, 10:30 AM",
-    },
-  };
+const vehicle = vehicles.find(
+  (vehicle) => vehicle.ownerId === userId
+);
+
+const owner = {
+  name: vehicle?.ownerName || "Customer",
+  phone: "+91 XXXXX XXXXX",
+  vehicle: vehicle || {
+    model: "No Vehicle Assigned",
+    registration: "N/A",
+    vin: "N/A",
+    purchaseDate: "N/A",
+    colour: "N/A",
+    fuel: "N/A",
+    transmission: "N/A",
+    mileage: "N/A",
+    nextService: "N/A",
+    warranty: "N/A",
+    status: "N/A",
+    serviceHistory: "No Service History",
+    appointment: "No Appointment",
+    image: "/i5.webp",
+  },
+};
 
 
   /* =====================================================
@@ -318,8 +325,8 @@ function OwnerDashboard() {
             <div className="vehicle-hero-image">
 
               <img
-                src="/i5.webp"
-                alt="BMW i5"
+              src={owner.vehicle.image}
+              
               />
 
             </div>

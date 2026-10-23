@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-
+import { vehicles } from "../../data/vehicles";
 import {
   ArrowLeft,
   Car,
@@ -19,20 +19,19 @@ function VehicleDetails() {
   
   const navigate = useNavigate();
 
-  const vehicle = {
-    owner: "Rohit Muragannavar",
-    model: "BMW i5 eDrive40",
-    registration: "KA-25-MH-4827",
-    vin: "WBY21FJ08PCT47291",
-    purchaseDate: "15 March 2025",
-    colour: "Red",
-    fuel: "Electric (EV)",
-    transmission: "Single-Speed Automatic",
-    mileage: "18,450 km",
-    nextService: "15 September 2026",
-    warranty: "Active",
-    status: "Service Up to Date",
-  };
+  const userId = localStorage.getItem("bmwUserId");
+
+const vehicle = vehicles.find(
+  (vehicle) => vehicle.ownerId === userId
+);
+if (!vehicle) {
+  return (
+    <div className="vehicle-details-page">
+      <h2>No vehicle assigned</h2>
+      <p>Please contact the administrator.</p>
+    </div>
+  );
+}
 
   return (
     <div className="vehicle-details-page">
@@ -40,14 +39,13 @@ function VehicleDetails() {
       {/* HEADER */}
 
       <header className="vehicle-details-header">
-
-  <button
-    className="back-button"
-    onClick={() => navigate("/owner-dashboard")}
-  >
-    <ArrowLeft size={18} />
-    <span>BACK TO DASHBOARD</span>
-  </button>
+<button
+  className="vehicles-back"
+  onClick={() => navigate("/service-dashboard")}
+>
+  <ArrowLeft size={18} />
+  BACK TO SERVICE DASHBOARD
+</button>
 
   <div className="details-header-title">
     <span>OWNER PORTAL</span>
@@ -93,8 +91,7 @@ function VehicleDetails() {
           <div className="details-car-image">
 
             <img
-              src="/i5.webp"
-              alt="BMW i5"
+            src={vehicle.image}
             />
 
           </div>

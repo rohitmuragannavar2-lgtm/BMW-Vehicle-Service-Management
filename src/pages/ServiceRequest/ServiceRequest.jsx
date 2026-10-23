@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-
+import { vehicles } from "../../data/vehicles";
 import {
   ArrowLeft,
   CalendarDays,
@@ -15,12 +15,22 @@ import "./ServiceRequest.css";
 function ServiceRequest() {
   const navigate = useNavigate();
 
-  const vehicle = {
-    owner: "Rohit Muragannavar",
-    model: "BMW i5 eDrive40",
-    registration: "KA-25-MH-4827",
-    mileage: "18,450 km",
-  };
+ const userId = localStorage.getItem("bmwUserId");
+
+const vehicle = vehicles.find(
+  (vehicle) => vehicle.ownerId === userId
+);
+
+if (!vehicle) {
+  return (
+    <div className="service-request-page">
+      <main className="service-request-content">
+        <h2>No vehicle assigned</h2>
+        <p>Please contact the administrator.</p>
+      </main>
+    </div>
+  );
+}
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -89,7 +99,7 @@ function ServiceRequest() {
 </header>
 
       {/* =====================================================
-          MAIN CONTENT
+          MAIN CONTENTaca
       ===================================================== */}
 
       <main className="service-request-content">
@@ -129,8 +139,7 @@ function ServiceRequest() {
           <div className="service-vehicle-image">
 
             <img
-              src="/i5.webp"
-              alt="BMW i5"
+             src={vehicle.image}
             />
 
           </div>

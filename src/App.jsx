@@ -15,6 +15,8 @@ import Innovation from "./components/Innovation/Innovation";
 import Experience from "./components/Experience/Experience";
 import FinalCTA from "./components/FinalCTA/FinalCTA";
 
+import TestDrive from "./pages/TestDrive/TestDrive";
+
 import Models from "./pages/Models/Models";
 import ModelDetails from "./pages/ModelDetails/ModelDetails";
 import Login from "./pages/Login/Login";
@@ -24,6 +26,10 @@ import VehicleDetails from "./pages/VehicleDetails/VehicleDetails";
 import ServiceRequest from "./pages/ServiceRequest/ServiceRequest";
 import Appointments from "./pages/Appointments/Appointments";
 import Documents from "./pages/Documents/Documents";
+
+import ServiceTeamDashboard from "./pages/ServiceTeamDashboard/ServiceTeamDashboard";
+import ServiceVehicles from "./pages/ServiceVehicles/ServiceVehicles";
+import ServiceRecord from "./pages/ServiceRecord/ServiceRecord";
 
 import AdminDashboard from "./pages/AdminDashboard/AdminDashboard";
 import AdminRequestDetails from "./pages/AdminRequestDetails/AdminRequestDetails";
@@ -101,11 +107,14 @@ function AppContent() {
   const hideNavbar =
     location.pathname === "/login" ||
     location.pathname === "/owner-dashboard" ||
-    location.pathname === "/vehicle-details" ||
-    location.pathname === "/service-request" ||
-    location.pathname === "/appointments" ||
-    location.pathname === "/documents" ||
-    location.pathname.startsWith("/admin-");
+    location.pathname === "/service-team-dashboard" ||
+    location.pathname === "/service-vehicles" ||
+    location.pathname === "/service-requests" ||
+    location.pathname === "/service-appointments" ||
+    location.pathname === "/service-history" ||
+    location.pathname === "/service-record" ||
+    location.pathname === "/admin-dashboard";
+    location.pathname ==="/admin-service-requests";
 
   return (
     <>
@@ -132,11 +141,6 @@ function AppContent() {
           element={<Models />}
         />
 
-
-        {/* =================================================
-            MODEL DETAILS
-        ================================================= */}
-
         <Route
           path="/models/:slug"
           element={<ModelDetails />}
@@ -160,6 +164,16 @@ function AppContent() {
         <Route
           path="/discover"
           element={<Discover />}
+        />
+
+
+        {/* =================================================
+            TEST DRIVE
+        ================================================= */}
+
+        <Route
+          path="/test-drive"
+          element={<TestDrive />}
         />
 
 
@@ -220,6 +234,36 @@ function AppContent() {
         <Route
           path="/documents"
           element={<Documents />}
+        />
+
+
+        {/* =================================================
+            SERVICE TEAM DASHBOARD
+        ================================================= */}
+
+        <Route
+          path="/service-team-dashboard"
+          element={<ServiceTeamDashboard />}
+        />
+
+
+        {/* =================================================
+            SERVICE TEAM VEHICLES
+        ================================================= */}
+
+        <Route
+          path="/service-vehicles"
+          element={<ServiceVehicles />}
+        />
+
+
+        {/* =================================================
+            SERVICE RECORD
+        ================================================= */}
+
+        <Route
+          path="/service-record"
+          element={<ServiceRecord />}
         />
 
 
